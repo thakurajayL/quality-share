@@ -1,0 +1,6 @@
+description = "Executes the BMad Task: Review Infrastructure"
+prompt = """
+CRITICAL: You are to execute the BMad Task defined below.
+
+@{.bmad-infrastructure-devops/tasks/review-infrastructure.md}
+"""
