@@ -1,0 +1,36 @@
+name: Deploy Hugo site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Set a branch to deploy from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # For pushing the build output to gh-pages
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          submodules: true # Fetch Hugo themes (true needs Git 2.12 or higher)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest' # Or specify a version, e.g., '0.121.1'
+          extended: true
+
+      - name: Build Hugo site
+        run: hugo --minify --baseURL "${{ github.event.repository.name }}" # Use repository name as baseURL for GitHub Pages
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          # The branch to deploy to. For user/organization pages, it's 'main'.
+          # For project pages, it's often 'gh-pages'.
+          publish_branch: gh-pages
