@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Hugo site
         working-directory: ./site
-        run: hugo --minify --baseURL "${{ github.event.repository.name }}" # Use repository name as baseURL for GitHub Pages
+        run: hugo --minify # Use repository name as baseURL for GitHub Pages
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
