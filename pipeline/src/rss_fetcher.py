@@ -1,6 +1,7 @@
 import feedparser
 from datetime import datetime
 from dateutil import parser
+from database import is_url_visited, add_visited_url
 
 def fetch_articles(feed_urls: list[str], cut_off_date: datetime) -> list[dict]:
     """Fetches and filters articles from a list of RSS feeds.
@@ -17,6 +18,9 @@ def fetch_articles(feed_urls: list[str], cut_off_date: datetime) -> list[dict]:
     for url in feed_urls:
         feed = feedparser.parse(url)
         for entry in feed.entries:
+            if is_url_visited(entry['link']):
+                continue
+
             published_date = parser.parse(entry['published'])
             if published_date.date() >= cut_off_date.date():
                 articles.append({
