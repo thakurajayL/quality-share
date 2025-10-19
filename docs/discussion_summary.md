@@ -1,0 +1,31 @@
+# Discussion Summary
+
+This document summarizes the key decisions and discussions during the architecture design process.
+
+## High Level Architecture
+
+*   **Architectural Style:** Static Site Architecture using Hugo, GitHub Pages, and GitHub Actions.
+*   **Key Features:** AI-assisted content curation pipeline with LangChain and Python.
+*   **Repository:** Monorepo.
+*   **Analytics:** Google Analytics with privacy considerations (cookie consent, GA4 Consent Mode).
+
+## Agile Team Perspective & Limitations
+
+*   **QA:** Acknowledged limitations of GitHub Pages for PR previews. Decided to defer advanced QA features to post-MVP.
+*   **Cost:** The cost of the AI pipeline is an unknown. A cost monitoring strategy will be implemented.
+*   **Analytics & Privacy:** The use of Google Analytics introduces a privacy compliance burden. A cookie consent banner and GA4 Consent Mode will be implemented.
+*   **Educational Goal:** The project's architecture is intentionally designed to be an educational showcase.
+
+## Data Models
+
+*   **Decision:** A single, unified `ContentItem` model will be used to represent all types of content (blog posts, research papers, etc.).
+*   **Rationale:** This approach provides flexibility and scalability, allowing for the easy addition of new content types in the future.
+*   **Implementation:** Fields specific to a certain content type (e.g., `doi` for research papers) will be optional/nullable.
+
+## Components & Workflow
+
+*   **Decision:** A PR-driven workflow will be used for content curation.
+*   **AI Curation Pipeline:** This component will discover new content and automatically create Pull Requests with the content formatted as Markdown files.
+*   **Human Curation:** The user (as the librarian) will review, edit, and approve content by merging Pull Requests.
+*   **Static Site & CI/CD Workflow:** This component is triggered on PR merge. It updates a SQLite database with the new content and then uses Hugo to build and deploy the site.
+*   **SQLite Role:** The database will be used to track visited URLs (to prevent duplicates) and to hold the curated content for the Hugo build process.

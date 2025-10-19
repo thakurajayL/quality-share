@@ -1,4 +1,4 @@
 baseURL = "https://thakurajayL.github.io/quality-share/"
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Quality Share: A Curated Library for Engineers'
 theme = "ananke"
