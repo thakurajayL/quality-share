@@ -1,3 +1,5 @@
+*`This document is a living log of key decisions and discussion points from the development process.`*
+
 # Discussion Summary
 
 This document summarizes the key decisions and discussions during the architecture design process.
@@ -29,3 +31,9 @@ This document summarizes the key decisions and discussions during the architectu
 *   **Human Curation:** The user (as the librarian) will review, edit, and approve content by merging Pull Requests.
 *   **Static Site & CI/CD Workflow:** This component is triggered on PR merge. It updates a SQLite database with the new content and then uses Hugo to build and deploy the site.
 *   **SQLite Role:** The database will be used to track visited URLs (to prevent duplicates) and to hold the curated content for the Hugo build process.
+
+## Manual Content Submission
+
+*   **Requirement:** A workflow was designed to allow the librarian to manually add content they discover themselves.
+*   **Implementation:** A command-line script will be created that takes a URL as input. The script will then trigger the same processing and PR-creation workflow as the automated pipeline.
+*   **Feature:** The script will automatically detect the content type (e.g., blog vs. research paper) but will also include a flag to allow the user to manually override this detection.

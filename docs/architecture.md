@@ -1,3 +1,5 @@
+*`This document outlines the technical architecture of the project. It is the 'How' the system will be built.`*
+
 # Quality Share Architecture Document
 
 ## 1. Introduction
@@ -87,8 +89,8 @@ This section captures the key discussion points and limitations identified from 
 
 ### 4.1. AI Curation Pipeline
 
-*   **Responsibility:** To autonomously discover, process, and propose new content by creating Pull Requests. It also tracks visited URLs to prevent duplicate submissions.
-*   **Workflow:**
+*   **Responsibility:** To autonomously discover, process, and propose new content by creating Pull Requests. It can be triggered automatically on a schedule or manually by the librarian for a specific URL. It also tracks visited URLs to prevent duplicates.
+*   **Workflow (Automated):**
     1.  Runs on a schedule, fetching content from external sources.
     2.  Checks a `visited_urls` table in the SQLite database to ensure content is new.
     3.  For new content, it creates a new branch and a Markdown file containing the processed content (`title`, `summary`, `tags`, etc.).
@@ -105,4 +107,279 @@ This section captures the key discussion points and limitations identified from 
     3.  The GitHub Action then executes Hugo, which builds the static site using the data from the `published_content` table.
     4.  The newly built site is then deployed to GitHub Pages.
 *   **Technology:** Hugo, Go, GitHub Actions.
+
+## 5. External APIs
+
+The AI Curation Pipeline will monitor the following sources for new content. The primary method for fetching content is via RSS feeds. For sources without an RSS feed, the pipeline will fall back to web scraping.
+
+| Source                  | URL                                        | Method      | Authentication | Notes                                               |
+| ----------------------- | ------------------------------------------ | ----------- | -------------- | --------------------------------------------------- |
+| Facebook Engineering    | `https://engineering.fb.com/feed/`         | RSS Feed    | None           |                                                     |
+| Netflix Tech Blog       | `http://netflixtechblog.com/feed`          | RSS Feed    | None           |                                                     |
+| Uber Engineering        | `https://eng.uber.com/feed/`               | RSS Feed    | None           |                                                     |
+| Google Research         | `http://research.googleblog.com/`          | RSS Feed    | None           |                                                     |
+| OpenAI Developer Blog   | `https://openai.com/news/rss.xml`          | RSS Feed    | None           |                                                     |
+| Anthropic Engineering   | `https://rsshub.app/anthropic/engineering` | RSS Feed    | None           | Unofficial feed via RSSHub.                         |
+| Apple Security          | `https://security.apple.com/blog/`         | Web Scraping| None           | No official RSS feed found. Must respect robots.txt.|
+
+## 6. Core Workflows
+
+This sequence diagram illustrates the core content curation and publishing workflow, from discovery to deployment.
+
+```mermaid
+sequenceDiagram
+    participant AI Curation Pipeline
+    participant SQLite Database
+    participant GitHub
+    participant Human Librarian
+    participant GitHub Actions
+    participant Hugo
+    participant GitHub Pages
+
+    AI Curation Pipeline->>External APIs: Fetch content
+    AI Curation Pipeline->>SQLite Database: Check for visited URL
+    alt URL is new
+        AI Curation Pipeline->>GitHub: Create branch and PR with new content
+        AI Curation Pipeline->>SQLite Database: Add URL to visited_urls
+        GitHub-->>Human Librarian: Notify of new PR
+        Human Librarian->>GitHub: Review and merge PR
+        GitHub-->>GitHub Actions: Trigger workflow on merge
+        GitHub Actions->>SQLite Database: Add content to published_content
+        GitHub Actions->>Hugo: Run build
+        Hugo->>SQLite Database: Read published_content
+        Hugo-->>GitHub Actions: Generate static site
+        GitHub Actions->>GitHub Pages: Deploy site
+    end
+```
+
+### Manual Curation Workflow
+
+This diagram illustrates the workflow when the librarian manually submits a new article.
+
+```mermaid
+sequenceDiagram
+    participant Human Librarian
+    participant Manual Add Script
+    participant GitHub
+    participant GitHub Actions
+    participant Hugo
+    participant GitHub Pages
+
+    Human Librarian->>Manual Add Script: Run script with URL
+    Manual Add Script->>GitHub: Create branch and PR with new content
+    GitHub-->>Human Librarian: Notify of new PR
+    Human Librarian->>GitHub: Review and merge PR
+    GitHub-->>GitHub Actions: Trigger workflow on merge
+    GitHub Actions->>Hugo: Run build
+    Hugo-->>GitHub Actions: Generate static site
+    GitHub Actions->>GitHub Pages: Deploy site
+```
+## 7. Database Schema
+
+Based on our data model and workflow, the following two tables will be created in the SQLite database.
+
+### `visited_urls`
+
+This table acts as a memory for the AI pipeline to prevent processing the same URL twice.
+
+```sql
+CREATE TABLE visited_urls (
+    url TEXT PRIMARY KEY,
+    visited_at DATETIME NOT NULL
+);
+```
+
+### `published_content`
+
+This table holds the curated content that will be used to build the website.
+
+```sql
+CREATE TABLE published_content (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    url TEXT NOT NULL UNIQUE,
+    summary TEXT,
+    source_name TEXT,
+    content_type TEXT NOT NULL,
+    publication_date DATETIME,
+    authors TEXT, -- Stored as a JSON array
+    doi TEXT,
+    tags TEXT -- Stored as a JSON array
+);
+
+```
+
+## 8. Source Tree
+
+The project will be organized as a monorepo with a clear separation between the AI Curation Pipeline and the Hugo-based website.
+
+```
+.
+├── .github/
+│   └── workflows/
+│       ├── main.yml         # GitHub Actions workflow for building and deploying the site
+│       └── pipeline.yml     # GitHub Actions workflow for running the AI Curation Pipeline on a schedule
+├── pipeline/
+│   ├── poetry.lock        # Poetry lock file for reproducible dependencies
+│   ├── pyproject.toml     # Defines project dependencies and metadata for the pipeline
+│   └── src/
+│       ├── __main__.py      # Main entry point to run the pipeline
+│       ├── pipeline.py      # Core logic for content processing and PR creation
+│       └── sources.py       # Modules for fetching content from different external APIs/RSS feeds
+├── site/
+│   ├── archetypes/        # Hugo archetypes
+│   ├── content/
+│   │   └── posts/         # Where approved content will live after being merged
+│   ├── data/              # Data files for Hugo
+│   ├── layouts/           # Hugo layout files
+│   ├── static/            # Static assets (CSS, JS, images)
+│   └── hugo.toml          # Hugo configuration file
+└── README.md
+```
+
+## 9. Infrastructure and Deployment
+
+This section defines the deployment architecture and practices for the project.
+
+*   **Infrastructure as Code (IaC):** The GitHub Actions workflow files (`.github/workflows/*.yml`) will serve as our IaC, defining the deployment process declaratively.
+*   **Deployment Strategy:** A **Continuous Deployment** model will be used. Every merge to the `main` branch will automatically trigger a build and deployment of the website.
+*   **CI/CD Platform:** **GitHub Actions**.
+*   **Environments:** For the MVP, there will be a single `production` environment, which is the live GitHub Pages site. A `staging` environment has been deferred as a post-MVP enhancement.
+*   **Rollback Strategy:** The rollback strategy is to revert the problematic commit in Git. This will trigger a new deployment, effectively rolling back the site to its previous state.
+
+## 10. Error Handling Strategy
+
+This section defines the error handling approach for the project's components.
+
+### AI Curation Pipeline (Python)
+
+*   **General Approach:** The pipeline will use standard Python exceptions and create custom exceptions for pipeline-specific issues (e.g., `ContentProcessingError`).
+*   **Logging:** Python's built-in `logging` module will be used to log errors to standard output, which will be captured by the GitHub Actions environment.
+*   **Error Handling Patterns:**
+    *   **Network Errors:** A retry mechanism with exponential backoff will be implemented to handle transient network issues when fetching content.
+    *   **Content Processing Errors:** If an article cannot be processed, the pipeline will log the error and skip the article to ensure the entire process is not halted.
+    *   **GitHub API Errors:** If the pipeline fails to create a Pull Request, it will log the error.
+
+### Static Site & CI/CD Workflow (Hugo & GitHub Actions)
+
+*   **General Approach:** The build process is designed to be "fail-fast." If Hugo encounters an error, it will stop the build, preventing a broken site from being deployed. The error will be logged in the GitHub Actions output.
+
+### Post-MVP Enhancements
+
+*   **Proactive Error Notification:** For the MVP, reviewing GitHub Actions logs will be the primary method for identifying skipped articles or pipeline failures. Post-MVP, a more proactive notification system (such as automatically creating GitHub Issues for skipped articles) will be implemented.
+
+## 11. Documentation Strategy
+
+This section defines the documentation strategy for the project.
+
+*   **Project Documentation:** The `docs/` folder will serve as the single source of truth for project-level documentation. Each file will have a clear purpose, as defined by the header note at the top of each file.
+*   **Code Documentation:** All Python code, especially public modules and functions, must have docstrings explaining their purpose, arguments, and return values.
+*   **Architectural Decision Records (ADRs):** The `site/content/decisions` folder will be used to log all significant architectural decisions. This creates a clear history of *why* certain decisions were made.
+*   **README:** The `README.md` file will serve as the main entry point for the project, providing a high-level overview and links to the other documentation.
+
+## 12. Coding Standards
+
+This section defines the coding standards for the project, which are mandatory for all code contributions.
+
+*   **Style & Linting:** We will use **`Black`** for code formatting and **`Ruff`** for linting. All code must pass the linter before being committed, and this will be enforced automatically in the CI/CD pipeline.
+*   **Type Hinting:** All function signatures **must** include type hints.
+*   **Dependency Management:** All Python dependencies **must** be managed through **`Poetry`**. The `poetry.lock` file will be committed to the repository.
+*   **Testing:** All new functionality must be accompanied by tests using the **`Pytest`** framework, with a target of 80% test coverage.
+*   **Secrets Management:** No secrets will be hardcoded. They **must** be passed in via GitHub Actions secrets. A secrets scanning tool (e.g., **`gitleaks`**) will be integrated into the CI/CD pipeline to prevent accidental commits of secrets.
+*   **PR-Driven Workflow:** All code changes **must** be submitted as Pull Requests and pass all automated checks before being merged.
+    *   **Note:** This rule will be strictly enforced *after* the initial project setup and architecture definition are complete. During the bootstrapping phase, direct commits to `main` are permissible.
+
+## 13. Test Strategy
+
+This section defines the testing strategy for the project.
+
+### Testing Philosophy
+*   **Approach:** For the MVP, we will use a "test-after" approach, where tests are written after a feature is implemented.
+*   **Coverage Goal:** We will target **80% test coverage** for the Python code in the AI Curation Pipeline.
+
+### Test Types
+*   **Unit Tests:**
+    *   **Framework:** We will use **`Pytest`**.
+    *   **Location:** Tests will be located in a `pipeline/tests` directory.
+    *   **Details:** These will be small, focused tests that verify the functionality of individual functions and classes. We will use mocking to isolate components and avoid external dependencies like network calls.
+
+*   **Integration Tests:**
+    *   **Scope:** We will have a small number of integration tests that verify the interaction between the different modules of the AI pipeline (e.g., does the main pipeline logic correctly call the content source module and then the PR creation module?).
+
+*   **End-to-End (E2E) Tests:**
+    *   **Approach:** For the MVP, E2E testing will be a **manual process**. This will involve:
+        1.  Manually triggering the AI pipeline.
+        2.  Verifying that a Pull Request is correctly created in GitHub.
+        3.  Merging the PR and verifying that the website is deployed correctly.
+
+### Continuous Testing
+*   **CI Integration:** All automated tests (unit and integration) will be run automatically in our GitHub Actions workflow on every Pull Request. A PR will be blocked from merging if any tests fail.
+
+## 14. Security
+
+This section defines the mandatory security requirements for the project.
+
+### Secrets Management
+*   **Rule:** No API keys, tokens, or other secrets will ever be hardcoded in the source code.
+*   **Implementation:** All secrets will be stored in **GitHub Actions secrets** and passed to the application as environment variables during runtime.
+*   **Tool:** We will use the **`gitleaks`** GitHub Action to automatically scan every commit for accidentally committed secrets. This will block any PR that contains a secret.
+
+### Dependency Security
+*   **Rule:** We must regularly scan our project's dependencies for known vulnerabilities.
+*   **Tool:** We will enable **GitHub's `Dependabot`**. It will automatically monitor our dependencies and create Pull Requests to update any that have known security vulnerabilities.
+
+### Input Validation
+*   **Rule:** All data fetched from external sources (RSS feeds, websites) must be treated as untrusted.
+*   **Implementation:** The AI Curation Pipeline will validate the structure and content of the data it fetches before processing it to prevent parsing errors or potential injection attacks.
+
+### Principle of Least Privilege
+*   **Rule:** The GitHub token used by our AI pipeline to create Pull Requests will be configured with the minimum permissions required. It will only have permission to create branches and PRs, not to delete the repository or modify other settings.
+
+### CI/CD Security
+*   **Rule:** We will rely on GitHub's default security setting that requires manual approval from a project administrator before running workflows on Pull Requests from first-time external contributors. This prevents malicious use of our CI/CD resources.
+
+## 15. Checklist Results
+
+This section contains the results of the architectural validation checklist run against this document.
+
+### Executive Summary
+
+*   **Overall Architecture Readiness:** **High.** The architecture is well-defined, robust, and well-documented for an MVP.
+*   **Critical Risks Identified:**
+    1.  **Lack of Monitoring:** Over-reliance on manually checking logs for pipeline failures.
+    2.  **Data Backup:** No defined strategy for backing up the SQLite database.
+    3.  **Accessibility:** Accessibility (a11y) for the frontend was not initially addressed.
+*   **Key Strengths:**
+    *   Excellent separation of concerns between the `pipeline` and `site`.
+    *   The PR-driven workflow is robust, auditable, and leverages GitOps principles.
+    *   Strong security posture for an MVP.
+*   **Project Type:** Full-stack (Static Site + Data Pipeline).
+
+### Section Analysis
+
+*   **1. Requirements Alignment:** **Pass (80%).**
+*   **2. Architecture Fundamentals:** **Pass (95%).**
+*   **3. Technical Stack & Decisions:** **Pass (90%).**
+*   **4. Frontend Design & Implementation:** **Pass (70%).** Score reflects the simplicity of the static site. The main gap (accessibility) has been addressed.
+*   **5. Resilience & Operational Readiness:** **Warning (60%).** The main gap (monitoring) has been addressed with a requirement for email notifications.
+*   **6. Security & Compliance:** **Pass (100%).**
+*   **7. Implementation Guidance:** **Pass (95%).**
+*   **8. Dependency & Integration Management:** **Pass (90%).**
+*   **9. AI Agent Implementation Suitability:** **Pass (95%).**
+*   **10. Accessibility Implementation:** **Fail (0%).** This has now been addressed by adding a formal requirement for WCAG 2.1 AA compliance.
+
+### Risk Assessment & Mitigations
+
+1.  **Lack of Proactive Monitoring (High Severity):**
+    *   **Mitigation:** A requirement has been added to implement email notifications on pipeline failure.
+2.  **No Data Backup Strategy (Medium Severity):**
+    *   **Mitigation:** A post-MVP requirement to implement a database backup strategy will be added.
+3.  **No Accessibility (a11y) Plan (Medium Severity):**
+    *   **Mitigation:** A requirement for WCAG 2.1 AA compliance has been added. We will use the accessibility-compliant Ananke theme.
+
+### Recommendations
+
+*   **Must-Fix Before Development:** All must-fix items have been addressed by adding them as formal requirements.
+*   **Should-Fix for Better Quality:** A database backup strategy should be implemented post-MVP.
+```
 

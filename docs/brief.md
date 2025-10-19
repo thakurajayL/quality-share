@@ -1,3 +1,5 @@
+*`This document outlines the high-level vision, goals, and strategic context of the project. It is the 'Why' behind the project.`*
+
 # Project Brief: The Trusted Librarian for Distributed Systems
 
 ## Executive Summary

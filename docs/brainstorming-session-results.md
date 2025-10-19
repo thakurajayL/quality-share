@@ -1,3 +1,5 @@
+*`This document captures the raw output and ideas from brainstorming sessions.`*
+
 # Brainstorming Session Results
 
 **Session Date:** 2025-10-15
