@@ -20,7 +20,7 @@
     <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
       {{ partials.Include "site-navigation.html" . }}
       <div class="tc-l pv3 ph3 ph4-ns">
-        {{ with .Params.description }}
+        {{ with .Site.Params.description }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
             {{ . }}
           </h2>
