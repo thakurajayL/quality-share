@@ -47,3 +47,8 @@ This document summarizes the key decisions and discussions during the architectu
 ## Known UI/UX Issues (MVP)
 
 *   **Homepage Header Appearance:** The large black header section on the homepage appears empty after removing the redundant site title. This is a theme-related aesthetic issue that will be addressed post-MVP.
+
+## Recent Discussions (2025-10-20)
+
+*   **Article Display Order:** Confirmed that the website displays articles with the most recent original publication date at the top. A new requirement was identified to add a "New" badge to recently curated articles to ensure they are visible to returning users, even if their original publication date is old. A new user story (3.13) has been created for this.
+*   **Sharing Links:** Confirmed that specific sections of the website (e.g., `/decisions/`) have their own unique URLs and can be shared directly. It was also noted that individual articles do not yet have their own dedicated pages or links, and a new user story (3.12) has been created to address this.

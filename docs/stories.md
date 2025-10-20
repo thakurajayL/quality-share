@@ -66,12 +66,16 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 3.7:** As a project owner, I want to add my LinkedIn profile link with a logo in the site's footer, so that visitors can easily connect with me.
     *   **Status:** Complete
 *   **Story 3.8:** As a visitor, I want to be able to view the project's architectural decisions, so that I can understand the rationale behind the system's design.
-    *   **Status:** To Do
+    *   **Status:** Complete
 *   **Story 3.9:** As a visitor, I want to be able to access a glossary of terms, so that I can understand the terminology used in the project.
     *   **Status:** To Do
 *   **Story 3.10:** As a visitor, I want to see separate menus for "research papers", "blogs", and "root cause analysis", so that I can easily filter and browse the content by type.
     *   **Status:** To Do
 *   **Story 3.11:** As a user, I want to be able to provide feedback on whether an article was useful, so that I can help improve the quality of the curated content.
+    *   **Status:** To Do
+*   **Story 3.12:** As a user, I want to be able to navigate to a dedicated page for each individual article, so that I can read the article's summary and share a direct link to it.
+    *   **Status:** To Do
+*   **Story 3.13:** As a returning visitor, I want to easily identify newly added articles, even if they are older, so that I don't miss any new content. This will be implemented with a "New" badge next to articles curated in the last 7 days.
     *   **Status:** To Do
 
 ---
@@ -85,4 +89,6 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 4.3:** As a project owner, I want to implement Google Analytics with a cookie consent banner, so that we can gather website usage data while respecting user privacy.
     *   **Status:** To Do
 *   **Story 4.4:** As a project owner, I want to enable `Dependabot` to automatically scan our. dependencies for vulnerabilities, so that we can keep our project secure.
+    *   **Status:** To Do
+*   **Story 4.5:** As a project owner, I want to configure all the necessary secrets (e.g., `SENDGRID_API_KEY`, `OPENAI_API_KEY`) in the GitHub repository, so that the CI/CD pipelines can run successfully.
     *   **Status:** To Do
