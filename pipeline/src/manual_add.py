@@ -6,6 +6,7 @@ from llm_summarizer import summarize_text, generate_tags
 from markdown_creator import create_markdown_content
 from github_manager import GitHubManager
 from database import add_visited_url, create_database
+from content_classifier import classify_content, ContentType
 
 def main():
     # Initialize the database (ensure tables exist)
@@ -31,8 +32,15 @@ def main():
     summary = summarize_text(extracted_text)
     tags = generate_tags(extracted_text)
 
-    # 3. Determine content type (Story 2.7 will enhance this)
-    content_type = content_type_override if content_type_override else "BLOG_POST" # Default for now
+    # 3. Determine content type
+    if content_type_override:
+        try:
+            content_type = ContentType[content_type_override.upper()]
+        except KeyError:
+            print(f"Invalid content type override: {content_type_override}. Using auto-detected.")
+            content_type = classify_content(article_url, extracted_text)
+    else:
+        content_type = classify_content(article_url, extracted_text)
 
     # 4. Create Markdown content
     # For now, we'll use a dummy title and published date, these will be extracted later
