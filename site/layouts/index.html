@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <div class="mw7 center">
+    <section class="flex-ns flex-wrap justify-around mt5">
+      {{ range $.Site.Data.articles }}
+        <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+          <div class="bg-white mb3 pa4 gray overflow-hidden">
+            <span class="f6 db">{{ .published_date | dateFormat "January 2, 2006" }}</span>
+            <h1 class="f3 near-black">
+              <a href="{{ .url }}" class="link black dim">
+                {{ .title }}
+              </a>
+            </h1>
+            <div class="nested-links f5 lh-copy gray mb3">
+              <p>{{ .summary }}</p>
+            </div>
+            <a href="{{ .url }}" class="ba b--moon-gray bg-light-gray grow no-underline br2 ph3 pv2 db dib-ns f6 gray hover-black" target="_blank" rel="noopener">Read More &rarr;</a>
+            <div class="mt3">
+              {{ range .tags }}
+                <a href="#" class="f6 link dim ba bw1 ph3 pv2 mb2 dib mr2" rel="tag">{{ . }}</a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </section>
+  </div>
+{{ end }}

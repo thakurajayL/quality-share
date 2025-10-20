@@ -1,0 +1,24 @@
+[
+  {
+    "id": "sample-article-1",
+    "title": "Sample Curated Article 1",
+    "url": "http://example.com/sample-article-1",
+    "summary": "This is a sample summary for the first curated article. It demonstrates how articles will appear on the homepage.",
+    "source_name": "Example Blog",
+    "content_type": "BLOG_POST",
+    "published_date": "2025-10-25T10:00:00Z",
+    "authors": ["John Doe"],
+    "tags": ["sample", "hugo", "test"]
+  },
+  {
+    "id": "sample-article-2",
+    "title": "Sample Curated Article 2",
+    "url": "http://example.com/sample-article-2",
+    "summary": "This is a sample summary for the second curated article. It also demonstrates homepage display.",
+    "source_name": "Research Journal",
+    "content_type": "RESEARCH_PAPER",
+    "published_date": "2025-10-24T15:30:00Z",
+    "authors": ["Jane Smith", "Dr. Alex Lee"],
+    "tags": ["research", "ai", "machine learning"]
+  }
+]
