@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+      {{- .Content -}}
+    </section>
+    <section class="flex-ns mt5 flex-wrap justify-around">
+      {{ range .Pages }}
+        <div class="w-100 mb4 relative bg-white pa4">
+          <h2 class="f2 athelas mt3 mb1">{{ .Title }}</h2>
+          <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | compare.Default "serif"}} f4 nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+            {{ .Content }}
+          </div>
+        </div>
+      {{ end }}
+    </section>
+  </article>
+{{ end }}
