@@ -18,3 +18,7 @@ theme = "ananke"
     name = "Decisions"
     url = "/decisions/"
     weight = 2
+  [[menu.main]]
+    name = "Glossary"
+    url = "/glossary/"
+    weight = 3
