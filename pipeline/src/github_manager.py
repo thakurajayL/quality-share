@@ -21,3 +21,7 @@ class GitHubManager:
     def create_pull_request(self, title: str, body: str, head_branch: str, base_branch: str = "main"):
         pr = self.repo.create_pull(title=title, body=body, head=head_branch, base=base_branch)
         return pr.html_url
+
+    def create_issue(self, title: str, body: str) -> str:
+        issue = self.repo.create_issue(title=title, body=body)
+        return issue.html_url

@@ -23,5 +23,15 @@ class TestContentClassifier(unittest.TestCase):
         text_content = "Some generic content without specific indicators."
         self.assertEqual(classify_content(url, text_content), ContentType.BLOG_POST) # Defaults to BLOG_POST
 
+    def test_classify_root_cause_analysis_by_keywords(self):
+        url = "https://example.com/incident-report"
+        text_content = "This is a postmortem of a recent incident. The root cause was a misconfiguration."
+        self.assertEqual(classify_content(url, text_content), ContentType.ROOT_CAUSE_ANALYSIS)
+
+    def test_classify_root_cause_analysis_case_insensitive(self):
+        url = "https://example.com/failure-analysis"
+        text_content = "A detailed Failure Analysis of the system outage."
+        self.assertEqual(classify_content(url, text_content), ContentType.ROOT_CAUSE_ANALYSIS)
+
 if __name__ == '__main__':
     unittest.main()
