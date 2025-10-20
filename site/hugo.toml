@@ -2,3 +2,8 @@ baseURL = "https://thakurajayL.github.io/quality-share/"
 languageCode = 'en-us'
 title = 'Quality Share: A Curated Library for Engineers'
 theme = "ananke"
+
+[params]
+  # Custom params for data sources
+  [params.data]
+    pipelineDb = "../pipeline/data/pipeline.db"

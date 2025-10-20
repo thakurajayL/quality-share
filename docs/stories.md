@@ -25,3 +25,16 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 2.5:** As a developer, I want the pipeline to automatically create a new branch, commit the Markdown file, and open a Pull Request for human review.
 *   **Story 2.6:** As the librarian, I want a command-line script to manually trigger the curation process for a specific URL.
 *   **Story 2.7:** As the librarian, I want the manual submission script to automatically detect the content type (e.g., blog post vs. research paper) and provide an option to override it.
+*   **Story 2.8: Generate Hugo Data File**
+    *   As a developer, I want the pipeline to generate a `site/data/articles.json` file from the `published_content` table in the SQLite database, so that Hugo can easily access the curated article data.
+
+---
+
+## Epic 3: Website & Content Display (MVP)
+
+*   **Story 3.1:** As a project owner, I want the Hugo site to use the Ananke theme, so that we have a consistent and accessible visual design.
+*   **Story 3.2:** As a visitor, I want to see a list of curated articles on the homepage, so that I can easily discover new content.
+*   **Story 3.3:** As a visitor, I want to be able to click on an article and see its full content (summary, tags, link to original), so that I can read more about it.
+*   **Story 3.4:** As a visitor, I want to access an "About" page that explains the project's mission and philosophy, so that I can understand what Quality Share is about.
+*   **Story 3.5:** As a visitor, I want to see a "View on GitHub" link in the site's footer, so that I can easily find the project's source code.
+*   **Story 3.6:** As a visitor, I want the website to be usable and readable on different screen sizes (desktop, tablet, mobile), so that I can access content from any device.
