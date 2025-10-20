@@ -1,4 +1,4 @@
-name: Run Python Tests
+name: Run Python Tests and Scan for Secrets
 
 on:
   pull_request:
@@ -11,6 +11,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Scan for secrets
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          # By default, this action will fail the workflow if secrets are found.
+          # We can add a gitleaks config file to customize the behavior.
+          # For now, we will use the default configuration.
+          verbose: false
 
       - name: Set up Python
         uses: actions/setup-python@v4

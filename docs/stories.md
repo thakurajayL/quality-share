@@ -79,7 +79,7 @@ This document contains the user stories for the Quality Share project, organized
 ## Epic 4: NFRs & Analytics
 
 *   **Story 4.1:** As a project owner, I want to integrate a secrets scanning tool into the CI/CD workflow, so that we can prevent accidental commitment of secrets.
-    *   **Status:** To Do
+    *   **Status:** Complete
 *   **Story 4.2:** As a developer, I want to receive email notifications for any CI/CD pipeline failures, so that I can promptly investigate and resolve issues.
     *   **Status:** To Do
 *   **Story 4.3:** As a project owner, I want to implement Google Analytics with a cookie consent banner, so that we can gather website usage data while respecting user privacy.
