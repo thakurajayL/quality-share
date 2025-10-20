@@ -10,7 +10,8 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 1.2:** As a developer, I want a new Python project initialized with Poetry in the `pipeline` directory, so that I can start developing the AI Curation Pipeline.
 *   **Story 1.3:** As the project owner, I want a basic Hugo site initialized in the `site` directory, so that we have a starting point for the website.
 *   **Story 1.4:** As a developer, I want a basic CI/CD pipeline that automatically builds and deploys the Hugo site to GitHub Pages on every push to the `main` branch.
-*   **Story 1.5:** As a developer, I want a basic testing workflow that runs `pytest` on every Pull Request to ensure code quality.
+*   **Story 1.5:** As a developer, I want a basic testing workflow that runs `pytest` on every Pull Request to ensure code quality, with a target of 80% test coverage for the Python pipeline.
+*   **Story 1.6:** As a project owner, I want to ensure that the implementation of the project is consistent with the architectural decisions and requirements documented in the `docs` directory, so that we have a high-quality and maintainable codebase.
 
 ---
 
@@ -27,6 +28,7 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 2.7:** As the librarian, I want the manual submission script to automatically detect the content type (e.g., blog post vs. research paper) and provide an option to override it.
 *   **Story 2.8: Generate Hugo Data File**
     *   As a developer, I want the pipeline to generate a `site/data/articles.json` file from the `published_content` table in the SQLite database, so that Hugo can easily access the curated article data.
+*   **Story 2.9:** As a developer, I want to configure the AI Curation Pipeline to run on a recurring schedule using GitHub Actions, so that new content is discovered and processed automatically without manual intervention.
 
 ---
 
@@ -38,3 +40,17 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 3.4:** As a visitor, I want to access an "About" page that explains the project's mission and philosophy, so that I can understand what Quality Share is about.
 *   **Story 3.5:** As a visitor, I want to see a "View on GitHub" link in the site's footer, so that I can easily find the project's source code.
 *   **Story 3.6:** As a visitor, I want the website to be usable and readable on different screen sizes (desktop, tablet, mobile), so that I can access content from any device.
+*   **Story 3.7:** As a project owner, I want to add my LinkedIn profile link with a logo in the site's footer, so that visitors can easily connect with me.
+*   **Story 3.8:** As a visitor, I want to be able to view the project's architectural decisions, so that I can understand the rationale behind the system's design.
+*   **Story 3.9:** As a visitor, I want to be able to access a glossary of terms, so that I can understand the terminology used in the project.
+*   **Story 3.10:** As a visitor, I want to see separate menus for "research papers", "blogs", and "root cause analysis", so that I can easily filter and browse the content by type.
+*   **Story 3.11:** As a user, I want to be able to provide feedback on whether an article was useful, so that I can help improve the quality of the curated content.
+
+---
+
+## Epic 4: NFRs & Analytics
+
+*   **Story 4.1:** As a project owner, I want to integrate a secrets scanning tool into the CI/CD workflow, so that we can prevent accidental commitment of secrets.
+*   **Story 4.2:** As a developer, I want to receive email notifications for any CI/CD pipeline failures, so that I can promptly investigate and resolve issues.
+*   **Story 4.3:** As a project owner, I want to implement Google Analytics with a cookie consent banner, so that we can gather website usage data while respecting user privacy.
+*   **Story 4.4:** As a project owner, I want to enable `Dependabot` to automatically scan our dependencies for vulnerabilities, so that we can keep our project secure.
