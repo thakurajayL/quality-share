@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # Enable version updates for Python (Poetry)
+  - package-ecosystem: "pip"
+    directory: "/pipeline"
+    schedule:
+      interval: "weekly"
+    # Add any specific configurations for Poetry here
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

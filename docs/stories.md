@@ -89,6 +89,6 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 4.3:** As a project owner, I want to implement Google Analytics with a cookie consent banner, so that we can gather website usage data while respecting user privacy.
     *   **Status:** To Do
 *   **Story 4.4:** As a project owner, I want to enable `Dependabot` to automatically scan our. dependencies for vulnerabilities, so that we can keep our project secure.
-    *   **Status:** To Do
+    *   **Status:** Complete
 *   **Story 4.5:** As a project owner, I want to configure all the necessary secrets (e.g., `SENDGRID_API_KEY`, `OPENAI_API_KEY`) in the GitHub repository, so that the CI/CD pipelines can run successfully.
     *   **Status:** To Do
