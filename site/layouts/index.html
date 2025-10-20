@@ -5,11 +5,6 @@
         <div class="relative w-100 mb4 bg-white nested-copy-line-height">
           <div class="bg-white mb3 pa4 gray overflow-hidden">
             <span class="f6 db">{{ .published_date | dateFormat "January 2, 2006" }}</span>
-            <h1 class="f3 near-black">
-              <a href="{{ .url }}" class="link black dim">
-                {{ .title }}
-              </a>
-            </h1>
             <div class="nested-links f5 lh-copy gray mb3">
               <p>{{ .summary }}</p>
             </div>

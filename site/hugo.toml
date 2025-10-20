@@ -7,3 +7,9 @@ theme = "ananke"
   # Custom params for data sources
   [params.data]
     pipelineDb = "../pipeline/data/pipeline.db"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
