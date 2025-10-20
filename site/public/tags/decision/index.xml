@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Quality Share: A Curated Library for Engineers</title>
-    <link>https://thakurajayL.github.io/quality-share/</link>
-    <description>Recent content on Quality Share: A Curated Library for Engineers</description>
+    <title>Decision on Quality Share: A Curated Library for Engineers</title>
+    <link>https://thakurajayL.github.io/quality-share/tags/decision/</link>
+    <description>Recent content in Decision on Quality Share: A Curated Library for Engineers</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://thakurajayL.github.io/quality-share/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Architectural Decision: Single Content Model for Flexibility</title>
-      <link>https://thakurajayL.github.io/quality-share/decisions/single-content-model-for-flexibility/</link>
-      <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://thakurajayL.github.io/quality-share/decisions/single-content-model-for-flexibility/</guid>
-      <description>&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;As part of defining the data models for the Quality Share project, a key decision was required on how to represent different types of content that the AI pipeline will process. The initial requirement is to handle both blog posts and research papers, with the potential for other content types (e.g., videos, books) in the future.&lt;/p&gt;&#xA;&lt;h2 id=&#34;options-considered&#34;&gt;Options Considered&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-a-single-unified-contentitem-model&#34;&gt;1. A Single, Unified &lt;code&gt;ContentItem&lt;/code&gt; Model&lt;/h3&gt;&#xA;&lt;p&gt;This approach uses a single model to represent all types of content. A &lt;code&gt;content_type&lt;/code&gt; field (e.g., &amp;ldquo;BLOG_POST&amp;rdquo;, &amp;ldquo;RESEARCH_PAPER&amp;rdquo;) is used to differentiate between them. Fields that are specific to one type of content (e.g., &lt;code&gt;doi&lt;/code&gt; for a research paper) are made optional/nullable.&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Fri, 17 Oct 2025 16:45:00 -0700</lastBuildDate>
+    <atom:link href="https://thakurajayL.github.io/quality-share/tags/decision/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Decision: Using SQLite for Pipeline Metadata Persistence</title>
       <link>https://thakurajayL.github.io/quality-share/decisions/using-sqlite-for-pipeline-metadata/</link>
@@ -42,13 +35,6 @@
       <pubDate>Fri, 17 Oct 2025 15:30:00 -0700</pubDate>
       <guid>https://thakurajayL.github.io/quality-share/decisions/choosing-hugo-as-ssg/</guid>
       <description>&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;The initial phase of the &amp;lsquo;Quality Share&amp;rsquo; project required the selection of a Static Site Generator (SSG) to build the website. The primary goals were to create a highly performant, maintainable, and scalable platform for curated technical content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;alternatives-considered&#34;&gt;Alternatives Considered&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Jekyll:&lt;/strong&gt; A Ruby-based SSG with native support on GitHub Pages, offering simplicity and ease of initial deployment.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Next.js (Static Export):&lt;/strong&gt; A React-based framework capable of generating static sites, offering a powerful JavaScript ecosystem and component-based development.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;decision&#34;&gt;Decision&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; was selected as the Static Site Generator.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About Quality Share</title>
-      <link>https://thakurajayL.github.io/quality-share/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thakurajayL.github.io/quality-share/about/</guid>
-      <description>&lt;h2 id=&#34;our-mission&#34;&gt;Our Mission&lt;/h2&gt;&#xA;&lt;p&gt;Quality Share aims to be your trusted librarian for high-quality technical content, especially for professionals interested in distributed systems. In a world of information overload, we provide a curated selection of the best technical articles from top companies and experts, complete with concise summaries and key takeaways to accelerate learning and discovery.&lt;/p&gt;&#xA;&lt;h2 id=&#34;our-philosophy-quality-is-everything&#34;&gt;Our Philosophy: Quality is Everything&lt;/h2&gt;&#xA;&lt;p&gt;We prioritize exceptional quality over a consistent publishing schedule. Content is only shared when it meets an exceptionally high standard. Our goal is to help software architects and senior engineers stay current with real-world, in-depth technical solutions without the noise.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

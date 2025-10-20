@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Architectural Decision: Single Content Model for Flexibility | Quality Share: A Curated Library for Engineers</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Context
+As part of defining the data models for the Quality Share project, a key decision was required on how to represent different types of content that the AI pipeline will process. The initial requirement is to handle both blog posts and research papers, with the potential for other content types (e.g., videos, books) in the future.
+Options Considered
+1. A Single, Unified ContentItem Model
+This approach uses a single model to represent all types of content. A content_type field (e.g., &ldquo;BLOG_POST&rdquo;, &ldquo;RESEARCH_PAPER&rdquo;) is used to differentiate between them. Fields that are specific to one type of content (e.g., doi for a research paper) are made optional/nullable.">
+    <meta name="generator" content="Hugo 0.151.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/quality-share/ananke/css/main.min.efe4d852f731d5d1fbb87718387202a97aafd768cdcdaed0662bbe6982e91824.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://thakurajayL.github.io/quality-share/decisions/single-content-model-for-flexibility/">
+    
+
+    <meta property="og:url" content="https://thakurajayL.github.io/quality-share/decisions/single-content-model-for-flexibility/">
+  <meta property="og:site_name" content="Quality Share: A Curated Library for Engineers">
+  <meta property="og:title" content="Architectural Decision: Single Content Model for Flexibility">
+  <meta property="og:description" content="Context As part of defining the data models for the Quality Share project, a key decision was required on how to represent different types of content that the AI pipeline will process. The initial requirement is to handle both blog posts and research papers, with the potential for other content types (e.g., videos, books) in the future.
+Options Considered 1. A Single, Unified ContentItem Model This approach uses a single model to represent all types of content. A content_type field (e.g., “BLOG_POST”, “RESEARCH_PAPER”) is used to differentiate between them. Fields that are specific to one type of content (e.g., doi for a research paper) are made optional/nullable.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="decisions">
+    <meta property="article:published_time" content="2025-10-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-19T00:00:00+00:00">
+
+  <meta itemprop="name" content="Architectural Decision: Single Content Model for Flexibility">
+  <meta itemprop="description" content="Context As part of defining the data models for the Quality Share project, a key decision was required on how to represent different types of content that the AI pipeline will process. The initial requirement is to handle both blog posts and research papers, with the potential for other content types (e.g., videos, books) in the future.
+Options Considered 1. A Single, Unified ContentItem Model This approach uses a single model to represent all types of content. A content_type field (e.g., “BLOG_POST”, “RESEARCH_PAPER”) is used to differentiate between them. Fields that are specific to one type of content (e.g., doi for a research paper) are made optional/nullable.">
+  <meta itemprop="datePublished" content="2025-10-19T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-10-19T00:00:00+00:00">
+  <meta itemprop="wordCount" content="356">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Architectural Decision: Single Content Model for Flexibility">
+  <meta name="twitter:description" content="Context As part of defining the data models for the Quality Share project, a key decision was required on how to represent different types of content that the AI pipeline will process. The initial requirement is to handle both blog posts and research papers, with the potential for other content types (e.g., videos, books) in the future.
+Options Considered 1. A Single, Unified ContentItem Model This approach uses a single model to represent all types of content. A content_type field (e.g., “BLOG_POST”, “RESEARCH_PAPER”) is used to differentiate between them. Fields that are specific to one type of content (e.g., doi for a research paper) are made optional/nullable.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/quality-share/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quality Share: A Curated Library for Engineers
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/quality-share/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Decisions
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Architectural Decision: Single Content Model for Flexibility</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-10-19T00:00:00Z">October 19, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="context">Context</h2>
+<p>As part of defining the data models for the Quality Share project, a key decision was required on how to represent different types of content that the AI pipeline will process. The initial requirement is to handle both blog posts and research papers, with the potential for other content types (e.g., videos, books) in the future.</p>
+<h2 id="options-considered">Options Considered</h2>
+<h3 id="1-a-single-unified-contentitem-model">1. A Single, Unified <code>ContentItem</code> Model</h3>
+<p>This approach uses a single model to represent all types of content. A <code>content_type</code> field (e.g., &ldquo;BLOG_POST&rdquo;, &ldquo;RESEARCH_PAPER&rdquo;) is used to differentiate between them. Fields that are specific to one type of content (e.g., <code>doi</code> for a research paper) are made optional/nullable.</p>
+<h3 id="2-separate-specific-models">2. Separate, Specific Models</h3>
+<p>This approach involves creating a distinct data model for each content type (e.g., a <code>BlogPost</code> model and a <code>ResearchPaper</code> model). Each model would have only the fields relevant to that specific type.</p>
+<h2 id="decision">Decision</h2>
+<p>We have decided to adopt <strong>Option 1: A Single, Unified <code>ContentItem</code> Model</strong>.</p>
+<h2 id="rationale">Rationale</h2>
+<p>The primary driver for this decision is <strong>flexibility and long-term scalability</strong>. The &ldquo;trusted librarian&rdquo; vision for this project implies that the ability to incorporate new and varied types of content over time is a core strategic goal.</p>
+<ul>
+<li><strong>Adaptability:</strong> A single model allows us to introduce new content types (e.g., &ldquo;VIDEO&rdquo;, &ldquo;BOOK_SUMMARY&rdquo;) simply by adding a new value to the <code>content_type</code> enum, without requiring changes to the database schema or creating new API endpoints.</li>
+<li><strong>Simplicity of Queries:</strong> It is far simpler to query and manage a single collection of content items, for example, to retrieve &ldquo;all content published in the last week,&rdquo; regardless of type.</li>
+<li><strong>Reduced Code Duplication:</strong> Core logic for fetching, storing, summarizing, and ranking content can be written once and applied to all content types.</li>
+<li><strong>Alignment with Architectural Principles:</strong> This decision directly supports our goal of a &ldquo;Living Architecture&rdquo; that is designed to evolve and adapt over time.</li>
+</ul>
+<h2 id="implications">Implications</h2>
+<ul>
+<li>The <code>ContentItem</code> data model will contain some fields that are optional/nullable to accommodate the specific attributes of different content types.</li>
+<li>Application logic will need to handle these optional fields gracefully.</li>
+<li>The <code>content_type</code> field becomes a critical piece of data for any logic that needs to differentiate between content types.</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://thakurajayL.github.io/quality-share/" >
+    &copy;  Quality Share: A Curated Library for Engineers 2025 
+  </a>
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://github.com/thakurajayL/quality-share" target="_blank">
+    View on GitHub
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

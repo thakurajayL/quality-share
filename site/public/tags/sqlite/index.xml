@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sqlite on Quality Share: A Curated Library for Engineers</title>
+    <link>https://thakurajayL.github.io/quality-share/tags/sqlite/</link>
+    <description>Recent content in Sqlite on Quality Share: A Curated Library for Engineers</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Oct 2025 16:45:00 -0700</lastBuildDate>
+    <atom:link href="https://thakurajayL.github.io/quality-share/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decision: Using SQLite for Pipeline Metadata Persistence</title>
+      <link>https://thakurajayL.github.io/quality-share/decisions/using-sqlite-for-pipeline-metadata/</link>
+      <pubDate>Fri, 17 Oct 2025 16:45:00 -0700</pubDate>
+      <guid>https://thakurajayL.github.io/quality-share/decisions/using-sqlite-for-pipeline-metadata/</guid>
+      <description>&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;The AI-assisted content curation pipeline requires a method to persistently store metadata such as source URLs, last fetch timestamps, and a record of processed article URLs. This is crucial to prevent re-processing content and to manage the pipeline&amp;rsquo;s state effectively.&lt;/p&gt;&#xA;&lt;h2 id=&#34;alternatives-considered&#34;&gt;Alternatives Considered&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;JSON File:&lt;/strong&gt; A simple file-based approach for storing data in JSON format.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Full-fledged Database (e.g., PostgreSQL, MySQL):&lt;/strong&gt; A client-server database system.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud-based Key-Value Store (e.g., AWS DynamoDB, Google Cloud Firestore):&lt;/strong&gt; A managed, serverless database service.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;decision&#34;&gt;Decision&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;SQLite&lt;/strong&gt; was chosen for persistent storage of the pipeline&amp;rsquo;s metadata.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

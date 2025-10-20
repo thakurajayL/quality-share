@@ -2,14 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/quality-share/post/facebook_scaling_memcache/</loc>
+    <loc>https://thakurajayL.github.io/quality-share/decisions/single-content-model-for-flexibility/</loc>
+    <lastmod>2025-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/quality-share/categories/</loc>
+    <loc>https://thakurajayL.github.io/quality-share/decisions/</loc>
+    <lastmod>2025-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/quality-share/</loc>
+    <loc>https://thakurajayL.github.io/quality-share/</loc>
+    <lastmod>2025-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/quality-share/post/</loc>
+    <loc>https://thakurajayL.github.io/quality-share/tags/architecture/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/quality-share/tags/</loc>
+    <loc>https://thakurajayL.github.io/quality-share/tags/data-persistence/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/decision/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/decisions/using-sqlite-for-pipeline-metadata/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/pipeline/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/sqlite/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/</loc>
+    <lastmod>2025-10-17T16:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/ai/</loc>
+    <lastmod>2025-10-17T16:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/curation/</loc>
+    <lastmod>2025-10-17T16:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/decisions/ai-curation-pipeline-langchain/</loc>
+    <lastmod>2025-10-17T16:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/langchain/</loc>
+    <lastmod>2025-10-17T16:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/ci-cd/</loc>
+    <lastmod>2025-10-17T15:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/decisions/github-pages-actions-deployment/</loc>
+    <lastmod>2025-10-17T15:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/deployment/</loc>
+    <lastmod>2025-10-17T15:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/github-actions/</loc>
+    <lastmod>2025-10-17T15:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/github-pages/</loc>
+    <lastmod>2025-10-17T15:45:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/decisions/choosing-hugo-as-ssg/</loc>
+    <lastmod>2025-10-17T15:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/hugo/</loc>
+    <lastmod>2025-10-17T15:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/performance/</loc>
+    <lastmod>2025-10-17T15:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/tags/static-site-generator/</loc>
+    <lastmod>2025-10-17T15:30:00-07:00</lastmod>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/about/</loc>
+  </url><url>
+    <loc>https://thakurajayL.github.io/quality-share/categories/</loc>
   </url>
 </urlset>

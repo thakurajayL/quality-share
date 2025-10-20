@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Langchain on Quality Share: A Curated Library for Engineers</title>
+    <link>https://thakurajayL.github.io/quality-share/tags/langchain/</link>
+    <description>Recent content in Langchain on Quality Share: A Curated Library for Engineers</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Oct 2025 16:00:00 -0700</lastBuildDate>
+    <atom:link href="https://thakurajayL.github.io/quality-share/tags/langchain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decision: AI-assisted Content Curation Pipeline with LangChain</title>
+      <link>https://thakurajayL.github.io/quality-share/decisions/ai-curation-pipeline-langchain/</link>
+      <pubDate>Fri, 17 Oct 2025 16:00:00 -0700</pubDate>
+      <guid>https://thakurajayL.github.io/quality-share/decisions/ai-curation-pipeline-langchain/</guid>
+      <description>&lt;h2 id=&#34;context&#34;&gt;Context&lt;/h2&gt;&#xA;&lt;p&gt;To fulfill the project&amp;rsquo;s mission of providing a curated platform of high-quality technical content, a scalable and efficient content discovery and summarization mechanism was required. The goal was to leverage AI to assist the human curator, not replace them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;alternatives-considered&#34;&gt;Alternatives Considered&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Purely Manual Curation:&lt;/strong&gt; Relying solely on manual discovery and summarization, which would be time-consuming and limit scalability.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Simple LLM Request/Response Scripts:&lt;/strong&gt; Using basic scripts to interact with LLMs, which would lack the orchestration, modularity, and advanced agentic capabilities offered by a framework.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;decision&#34;&gt;Decision&lt;/h2&gt;&#xA;&lt;p&gt;An &lt;strong&gt;AI-assisted Content Curation Pipeline&lt;/strong&gt; will be implemented, with &lt;strong&gt;LangChain&lt;/strong&gt; chosen as the orchestration framework.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
