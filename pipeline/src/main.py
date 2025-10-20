@@ -1,4 +1,3 @@
-
 import os
 from datetime import datetime, timedelta
 from rss_fetcher import fetch_articles
@@ -63,7 +62,7 @@ def main():
             # 4. Create Markdown content
             title = article['title']
             published_date = article['published']
-            markdown_content = create_markdown_content(title, article_url, summary, tags, published_date)
+            markdown_content = create_markdown_content(title, article_url, summary, tags, published_date, content_type)
 
             # 5. GitHub Operations
             branch_name = f"content/new-article-{datetime.now().strftime('%Y%m%d%H%M%S')}"

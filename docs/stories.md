@@ -70,7 +70,7 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 3.9:** As a visitor, I want to be able to access a glossary of terms, so that I can understand the terminology used in the project.
     *   **Status:** Complete
 *   **Story 3.10:** As a visitor, I want to see separate menus for "research papers", "blogs", and "root cause analysis", so that I can easily filter and browse the content by type.
-    *   **Status:** To Do
+    *   **Status:** Complete
 *   **Story 3.11:** As a user, I want to be able to provide feedback on whether an article was useful, so that I can help improve the quality of the curated content.
     *   **Status:** To Do
 *   **Story 3.12:** As a user, I want to be able to navigate to a dedicated page for each individual article, so that I can read the article's summary and share a direct link to it.
