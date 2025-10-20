@@ -1,3 +1,4 @@
+
 name: Run Python Tests and Scan for Secrets
 
 on:
@@ -15,9 +16,6 @@ jobs:
       - name: Scan for secrets
         uses: gitleaks/gitleaks-action@v2
         with:
-          # By default, this action will fail the workflow if secrets are found.
-          # We can add a gitleaks config file to customize the behavior.
-          # For now, we will use the default configuration.
           verbose: false
 
       - name: Set up Python
@@ -35,3 +33,18 @@ jobs:
       - name: Run tests
         working-directory: ./pipeline
         run: poetry run pytest
+
+  notify-on-failure:
+    runs-on: ubuntu-latest
+    if: failure()
+    needs: [test]
+    steps:
+      - name: Send email notification
+        uses: sendgrid/sendgrid-action@v3
+        with:
+          to: ${{ secrets.MAIL_TO }}
+          from: 'actions@github.com'
+          subject: 'Workflow Failure: ${{ github.workflow }} in ${{ github.repository }}'
+          html_content: 'The ${{ github.workflow }} workflow in the ${{ github.repository }} repository has failed. Please check the logs for more details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
