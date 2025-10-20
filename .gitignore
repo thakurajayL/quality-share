@@ -7,3 +7,6 @@ env/
 
 # Database
 *.db
+
+# Hugo
+site/public/
