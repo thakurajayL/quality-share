@@ -7,6 +7,7 @@ from markdown_creator import create_markdown_content
 from github_manager import GitHubManager
 from database import add_visited_url, create_database
 from content_classifier import classify_content
+from data_generator import generate_articles_json_and_markdown
 
 # Define the list of RSS feeds to process
 RSS_FEEDS = [
@@ -105,6 +106,8 @@ def main():
             except Exception as issue_e:
                 print(f"Failed to create GitHub issue for {article_url}: {issue_e}")
 
+    # After processing all articles, generate the JSON and Markdown files for Hugo
+    generate_articles_json_and_markdown()
 
 if __name__ == "__main__":
     main()

@@ -74,7 +74,7 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 3.11:** As a user, I want to be able to provide feedback on whether an article was useful, so that I can help improve the quality of the curated content.
     *   **Status:** To Do
 *   **Story 3.12:** As a user, I want to be able to navigate to a dedicated page for each individual article, so that I can read the article's summary and share a direct link to it.
-    *   **Status:** To Do
+    *   **Status:** Complete
 *   **Story 3.13:** As a returning visitor, I want to easily identify newly added articles, even if they are older, so that I don't miss any new content. This will be implemented with a "New" badge next to articles curated in the last 7 days.
     *   **Status:** To Do
 

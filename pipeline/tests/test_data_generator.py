@@ -2,10 +2,10 @@ import unittest
 import sqlite3
 import json
 from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch, MagicMock, call
 from datetime import datetime
 
-from data_generator import generate_articles_json, ARTICLES_JSON_PATH
+from data_generator import generate_articles_json_and_markdown, ARTICLES_JSON_PATH, ARTICLE_CONTENT_PATH
 from database import get_db_connection # Import the context manager
 
 class TestDataGenerator(unittest.TestCase):
@@ -26,7 +26,8 @@ class TestDataGenerator(unittest.TestCase):
                 authors TEXT,
                 tags TEXT
             );
-        """)
+        """
+        )
         self.conn.commit()
 
         # Mock get_db_connection to return our in-memory connection
@@ -37,20 +38,19 @@ class TestDataGenerator(unittest.TestCase):
         self.mock_mkdir = patch('pathlib.Path.mkdir')
         self.mock_mkdir.start()
 
-        # Mock open to capture file writes
-        self.mock_open_obj = unittest.mock.mock_open()
-        self.mock_open = patch('builtins.open', self.mock_open_obj)
-        self.mock_open.start()
-        self.mock_file_handle = self.mock_open_obj.return_value.__enter__.return_value
+        # Mock json.dump to capture the data written to articles.json
+        self.patch_json_dump = patch('data_generator.json.dump')
+        self.mock_json_dump = self.patch_json_dump.start()
+
     def tearDown(self):
         self.conn.close()
         self.mock_get_db_connection.stop()
         self.mock_mkdir.stop()
-        self.mock_open.stop()
+        self.patch_json_dump.stop()
 
     def test_generate_articles_json_empty(self):
-        generate_articles_json()
-        self.mock_file_handle.write.assert_called_once_with("[]")
+        generate_articles_json_and_markdown()
+        self.mock_json_dump.assert_called_once_with([], unittest.mock.ANY, indent=4)
 
     def test_generate_articles_json_with_data(self):
         # Insert some dummy data
@@ -84,9 +84,9 @@ class TestDataGenerator(unittest.TestCase):
         ))
         self.conn.commit()
 
-        generate_articles_json()
+        generate_articles_json_and_markdown()
 
-        expected_data = [
+        expected_json_data = [
             {
                 "id": "article-2",
                 "title": "Test Article 2",
@@ -111,12 +111,8 @@ class TestDataGenerator(unittest.TestCase):
             }
         ]
 
-        # Get the data that was written to the mock file
-        written_data_str = "".join([call.args[0] for call in self.mock_file_handle.write.call_args_list])
-        written_data = json.loads(written_data_str)
-
-        # Assert that the written data matches the expected data
-        self.assertEqual(written_data, expected_data)
+        # Assert that the JSON file was written correctly
+        self.mock_json_dump.assert_called_once_with(expected_json_data, unittest.mock.ANY, indent=4)
 
 if __name__ == '__main__':
     unittest.main()
