@@ -100,11 +100,11 @@ This section captures the key discussion points and limitations identified from 
 
 ### 4.2. Static Site & CI/CD Workflow
 
-*   **Responsibility:** To build and deploy the website automatically when new content is approved.
+*   **Responsibility:** To build and deploy the website automatically when new content is approved, reading article data from `site/data/articles.json`.
 *   **Workflow:**
     1.  Is triggered when a content Pull Request is merged into the `main` branch.
     2.  A GitHub Action runs a script to update a `published_content` table in the SQLite database with the content from the newly merged file.
-    3.  The GitHub Action then executes Hugo, which builds the static site using the data from the `published_content` table.
+    3.  The GitHub Action then executes Hugo, which builds the static site using the data from `site/data/articles.json`.
     4.  The newly built site is then deployed to GitHub Pages.
 *   **Technology:** Hugo, Go, GitHub Actions.
 
@@ -145,8 +145,10 @@ sequenceDiagram
         Human Librarian->>GitHub: Review and merge PR
         GitHub-->>GitHub Actions: Trigger workflow on merge
         GitHub Actions->>SQLite Database: Add content to published_content
+        GitHub Actions->>Python Script: Generate site/data/articles.json from DB
+        Python Script-->>GitHub Actions: articles.json created
         GitHub Actions->>Hugo: Run build
-        Hugo->>SQLite Database: Read published_content
+        Hugo->>articles.json: Read article data
         Hugo-->>GitHub Actions: Generate static site
         GitHub Actions->>GitHub Pages: Deploy site
     end

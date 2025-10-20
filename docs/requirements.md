@@ -14,3 +14,7 @@
 *   **Security:** A secrets scanning tool (e.g., gitleaks) must be integrated into the GitHub Actions workflow to prevent accidental commitment of secrets.
 *   **Accessibility:** The website must be compliant with WCAG 2.1 AA standards.
 *   **Monitoring:** The CI/CD pipeline must send an email notification upon any workflow failure.
+
+## Future Enhancements
+
+*   **Pagination:** Implement pagination for the homepage to improve user experience with a large number of articles.
