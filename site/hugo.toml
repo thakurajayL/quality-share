@@ -11,5 +11,5 @@ theme = "ananke"
 [menu]
   [[menu.main]]
     name = "About"
-    url = "/about/"
+    url = "/about.html"
     weight = 1
