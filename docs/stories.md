@@ -64,7 +64,7 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 3.6:** As a visitor, I want the website to be usable and readable on different screen sizes (desktop, tablet, mobile), so that I can access content from any device.
     *   **Status:** Complete
 *   **Story 3.7:** As a project owner, I want to add my LinkedIn profile link with a logo in the site's footer, so that visitors can easily connect with me.
-    *   **Status:** To Do
+    *   **Status:** Complete
 *   **Story 3.8:** As a visitor, I want to be able to view the project's architectural decisions, so that I can understand the rationale behind the system's design.
     *   **Status:** To Do
 *   **Story 3.9:** As a visitor, I want to be able to access a glossary of terms, so that I can understand the terminology used in the project.
