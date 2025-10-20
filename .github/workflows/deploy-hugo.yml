@@ -27,6 +27,9 @@ jobs:
         working-directory: ./site
         run: hugo --minify # Use repository name as baseURL for GitHub Pages
 
+      - name: List site directory after build
+        run: ls -R ./site
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
