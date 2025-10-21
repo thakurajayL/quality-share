@@ -17,6 +17,23 @@ jobs:
           submodules: true # Fetch Hugo themes (true needs Git 2.12 or higher)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: |
+          pip install poetry
+
+      - name: Install dependencies
+        working-directory: ./pipeline
+        run: poetry install
+
+      - name: Generate articles.json
+        working-directory: ./pipeline
+        run: poetry run python src/main.py
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
