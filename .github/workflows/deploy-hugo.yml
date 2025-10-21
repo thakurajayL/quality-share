@@ -30,6 +30,10 @@ jobs:
         working-directory: ./pipeline
         run: poetry install
 
+      - name: Update published_content table
+        working-directory: ./pipeline
+        run: poetry run python src/update_published_content.py
+
       - name: Generate articles.json
         working-directory: ./pipeline
         run: poetry run python src/generate_site_data.py
