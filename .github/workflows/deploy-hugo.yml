@@ -34,6 +34,7 @@ jobs:
         working-directory: ./pipeline
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_REPO_NAME: ${{ github.repository }}
         run: poetry run python src/main.py
 
       - name: Setup Hugo
