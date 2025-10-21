@@ -11,8 +11,8 @@ class GitHubManager:
         self.repo = self.g.get_repo(repo_name)
 
     def create_branch(self, branch_name: str, base_branch: str = "main"):
-        base_ref = self.repo.get_git_ref(f"heads/{base_branch}")
-        self.repo.create_git_ref(f"refs/heads/{branch_name}", base_ref.sha)
+        base_commit = self.repo.get_branch(base_branch).commit
+        self.repo.create_git_ref(f"refs/heads/{branch_name}", base_commit.sha)
 
     def commit_file(self, branch_name: str, file_path: str, content: str, commit_message: str):
         contents = self.repo.get_contents(file_path, ref=branch_name)

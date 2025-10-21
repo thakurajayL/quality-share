@@ -24,6 +24,20 @@ def create_database():
                 visited_at DATETIME NOT NULL
             );
         """)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS published_content (
+                id TEXT PRIMARY KEY,
+                title TEXT NOT NULL,
+                url TEXT NOT NULL UNIQUE,
+                summary TEXT,
+                source_name TEXT,
+                content_type TEXT NOT NULL,
+                publication_date DATETIME,
+                authors TEXT, -- Stored as a JSON array
+                doi TEXT,
+                tags TEXT -- Stored as a JSON array
+            );
+        """)
         conn.commit()
 
 def _add_visited_url(conn, url: str):
