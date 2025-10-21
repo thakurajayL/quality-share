@@ -94,3 +94,10 @@ This document contains the user stories for the Quality Share project, organized
     *   **Status:** Complete
 *   **Story 4.5:** As a project owner, I want to configure all the necessary secrets (e.g., `OPENAI_API_KEY`, `GOOGLE_ANALYTICS_MEASUREMENT_ID`) in the GitHub repository, so that the CI/CD pipelines can run successfully.
     *   **Status:** Complete
+
+---
+
+## Epic 5: Future Enhancements
+
+*   **Story 5.1:** As a developer, I want to mock OpenAI API calls in unit tests, so that I can avoid incurring costs and ensure test stability without external dependencies.
+    *   **Status:** To Do
