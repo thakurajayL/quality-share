@@ -20,7 +20,7 @@ class TestGitHubManager(unittest.TestCase):
         self.manager.create_branch("new-branch")
         self.mock_repo.create_git_ref.assert_called_once_with("refs/heads/new-branch", "12345")
 
-    def test_commit_file():
+    def test_commit_file(self):
         mock_contents = MagicMock()
         mock_contents.path = "test.md"
         mock_contents.sha = "old_sha"
