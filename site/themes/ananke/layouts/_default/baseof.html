@@ -49,9 +49,9 @@
     {{- template "_internal/twitter_cards.html" . -}}
 
     {{ if hugo.IsProduction }}
-      {{ template "_internal/google_analytics.html" . }}
+      {{ template "_internal/google_analytics.html" .Site }}
     {{ end }}
-	{{ block "head" . }}{{ partials.Include "head-additions.html" . }}{{ end }}
+	{{ block "head" . }}{{ partials.Include "head-additions.html" .Site }}{{ end }}
   </head>
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
