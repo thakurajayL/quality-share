@@ -17,6 +17,8 @@ def update_published_content_table():
         try:
             with open(markdown_file, 'r') as f:
                 post = frontmatter.load(f)
+            print(f"DEBUG: Processing file: {markdown_file.name}")
+            print(f"DEBUG: Front matter for {markdown_file.name}: {post.metadata}")
             
             # Extract data from front matter
             article_id = post.metadata.get('id', markdown_file.stem) # Use filename as ID if not present
