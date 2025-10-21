@@ -35,8 +35,7 @@ jobs:
         run: poetry run python src/update_published_content.py
 
       - name: Generate articles.json
-        working-directory: ./pipeline
-        run: poetry run python src/generate_site_data.py
+        run: poetry run python pipeline/src/generate_site_data.py
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
