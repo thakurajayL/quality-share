@@ -30,6 +30,9 @@ jobs:
         working-directory: ./pipeline
         run: poetry install
 
+      - name: Debug list site/content/posts
+        run: ls -R site/content/posts
+
       - name: Update published_content table
         working-directory: ./pipeline
         run: poetry run python src/update_published_content.py
@@ -38,15 +41,21 @@ jobs:
         working-directory: ./pipeline
         run: poetry run python src/generate_site_data.py
 
+      - name: Debug articles.json content
+        run: cat site/data/articles.json
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest' # Or specify a version, e.g., '0.121.1'
+          hugo-version: 'latest'
           extended: true
 
       - name: Build Hugo site
         working-directory: ./site
-        run: hugo --minify # Use repository name as baseURL for GitHub Pages
+        run: hugo --minify
+
+      - name: Debug list site/public after build
+        run: ls -R site/public
 
       - name: List site directory after build
         run: ls -R ./site
