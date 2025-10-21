@@ -28,7 +28,7 @@ window.cookieconsent.initialise({
     }
   },
   onStatusChange: function(status) {
-    if (this.has  "allow") {
+    if (status == cookieconsent.status.allow) {
       // Enable Google Analytics if cookies are allowed
       if (typeof window.ga === 'function') {
         window.ga('create', gaMeasurementId, 'auto');
