@@ -2,7 +2,7 @@ import os
 import frontmatter
 import sqlite3
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 
 from database import get_db_connection
@@ -25,16 +25,24 @@ def update_published_content_table():
             source_name = post.metadata.get('source_name', 'Unknown')
             content_type = post.metadata.get('content_type')
             publication_date_str = post.metadata.get('published_date')
-            authors = json.dumps(post.metadata.get('authors', []))
+            authors_data = post.metadata.get('authors', [])
+            if isinstance(authors_data, str):
+                authors_data = [authors_data]
+            authors = json.dumps(authors_data)
             doi = post.metadata.get('doi', '')
-            tags = json.dumps(post.metadata.get('tags', []))
+            tags_data = post.metadata.get('tags', [])
+            if isinstance(tags_data, str):
+                tags_data = [tags_data]
+            tags = json.dumps(tags_data)
 
             if not all([title, url, content_type, publication_date_str]):
                 print(f"Skipping {markdown_file.name}: Missing required front matter fields.")
                 continue
 
-            # Convert publication_date to datetime object
+            # Convert publication_date to datetime object and make it timezone-naive
             publication_date = datetime.fromisoformat(publication_date_str.replace('Z', '+00:00'))
+            if publication_date.tzinfo is not None:
+                publication_date = publication_date.astimezone(timezone.utc).replace(tzinfo=None)
 
             with get_db_connection() as conn:
                 # Check if article already exists to prevent duplicates
