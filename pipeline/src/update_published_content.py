@@ -6,12 +6,13 @@ from pathlib import Path
 from datetime import datetime, timezone
 import json
 
-from database import get_db_connection
+from database import get_db_connection, create_database
 
 ARTICLE_CONTENT_PATH = Path(__file__).parent.parent.parent / "site" / "content" / "posts"
 
 def update_published_content_table():
     """Reads Markdown files from site/content/posts and updates the published_content table."""
+    create_database() # Ensure database tables are created
     print(f"Scanning for Markdown files in: {ARTICLE_CONTENT_PATH}")
     for markdown_file in ARTICLE_CONTENT_PATH.glob("*.md"):
         try:
