@@ -10,3 +10,5 @@ env/
 
 # Hugo
 site/public/
+site/content/posts/test-article-1.md
+site/content/posts/test-article-2.md
