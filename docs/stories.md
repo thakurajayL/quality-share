@@ -77,6 +77,8 @@ This document contains the user stories for the Quality Share project, organized
     *   **Status:** Complete
 *   **Story 3.13:** As a returning visitor, I want to easily identify newly added articles, even if they are older, so that I don't miss any new content. This will be implemented with a "New" badge next to articles curated in the last 7 days.
     *   **Status:** To Do
+*   **Story 3.14:** As a project owner, I want to populate the privacy policy page with detailed information, so that users understand how their data is handled.
+    *   **Status:** To Do
 
 ---
 
