@@ -1,0 +1,132 @@
+
+---
+title: "Scaling LLM Inference: Innovations in Tensor Parallelism, Context Parallelism, and Expert Parallelism"
+date: 2025-10-17T16:00:50+00:00
+link: "https://engineering.fb.com/2025/10/17/ai-research/scaling-llm-inference-innovations-tensor-parallelism-context-parallelism-expert-parallelism/"
+summary: "Meta is enhancing LLM inference systems for the Meta AI App by optimizing resource efficiency, throughput, and latency. They focus on key performance metrics like GPU utilization, query throughput, and response time. To address challenges in deploying large models, they use advanced parallelism techniques like tensor, context, and expert parallelism. These methods improve efficiency and scalability for real-time inference tasks. Future plans involve N-D parallelism and disaggregating prefill and decoding tiers to optimize resource usage and accommodate heterogeneous hardware. Challenges ahead include optimizing cloud infrastructure, integrating communication operations into computational kernels, and reducing CPU overhead. These advancements aim to drive innovation in AI applications and ensure efficient LLM inference for global users."
+tags:
+  - LLM inference systems
+  - Meta AI App
+  - parallelism techniques
+  - resource efficiency
+  - throughput
+  - latency
+  - large language models
+  - AI-powered applications
+  - conversational agents
+  - content generation
+  - real-time inference
+  - GPU utilization
+  - operational efficiency
+  - queries per second
+  - response times
+  - time-to-first-token
+  - time-to-incremental-token
+  - computational demands
+  - generative-inference task
+  - prefll stage
+  - decoding stage
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+  - tensor parallelism
+categories:
+  - ContentType.BLOG_POST
+---
+
