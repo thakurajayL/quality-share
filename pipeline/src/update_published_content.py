@@ -1,3 +1,4 @@
+import sys
 import os
 import frontmatter
 import sqlite3
@@ -25,6 +26,7 @@ def update_published_content_table():
             source_name = post.metadata.get('source_name', 'Unknown')
             content_type = post.metadata.get('content_type')
             publication_date_str = post.metadata.get('published_date')
+
             authors_data = post.metadata.get('authors', [])
             if isinstance(authors_data, str):
                 authors_data = [authors_data]
@@ -71,6 +73,12 @@ def update_published_content_table():
 
         except Exception as e:
             print(f"Error processing {markdown_file.name}: {e}")
+            import traceback
+            traceback.print_exc()
+            sys.exit(1)
+
+if __name__ == "__main__":
+    update_published_content_table()
 
 if __name__ == "__main__":
     update_published_content_table()
