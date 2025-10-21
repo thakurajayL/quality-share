@@ -21,13 +21,13 @@ def generate_articles_json_and_markdown():
     ARTICLE_CONTENT_PATH.mkdir(parents=True, exist_ok=True)
 
     with get_db_connection() as conn:
-        cursor = conn.execute("SELECT * FROM published_content ORDER BY published_date DESC")
+        cursor = conn.execute("SELECT * FROM published_content ORDER BY publication_date DESC")
         for row in cursor.fetchall():
             article = dict(row)
             
             # Convert datetime objects to ISO format strings for JSON
-            if 'published_date' in article and isinstance(article['published_date'], datetime):
-                article['published_date'] = article['published_date'].isoformat()
+            if 'publication_date' in article and isinstance(article['publication_date'], datetime):
+                article['publication_date'] = article['publication_date'].isoformat()
             
             # Parse JSON strings back to Python objects if needed (e.g., tags, authors)
             if 'tags' in article and article['tags']:
@@ -51,7 +51,7 @@ def generate_articles_json_and_markdown():
                 link=article['url'],
                 summary=article['summary'],
                 tags=article['tags'],
-                published_date=datetime.fromisoformat(article['published_date']),
+                published_date=datetime.fromisoformat(article['publication_date']),
                 content_type=article['content_type'],
                 authors=article.get('authors'), # Safely get authors
                 doi=article.get('doi') # Safely get doi
