@@ -26,6 +26,10 @@ def update_published_content_table():
             source_name = post.metadata.get('source_name', 'Unknown')
             content_type = post.metadata.get('content_type')
             publication_date_str = post.metadata.get('published_date')
+            if publication_date_str is None:
+                print(f"DEBUG: 'published_date' is missing for {markdown_file.name}. Metadata: {post.metadata}")
+                print(f"Skipping {markdown_file.name}: 'published_date' is missing from front matter.")
+                continue
 
             authors_data = post.metadata.get('authors', [])
             if isinstance(authors_data, str):
