@@ -8,7 +8,7 @@ class GitHubManager:
         if not token:
             raise ValueError("GitHub token not provided and GITHUB_TOKEN environment variable not set.")
         self.g = Github(token)
-        self.repo = self.g.get_user().get_repo(repo_name)
+        self.repo = self.g.get_repo(repo_name)
 
     def create_branch(self, branch_name: str, base_branch: str = "main"):
         base_ref = self.repo.get_git_ref(f"heads/{base_branch}")
