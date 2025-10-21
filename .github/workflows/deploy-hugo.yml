@@ -32,6 +32,8 @@ jobs:
 
       - name: Generate articles.json
         working-directory: ./pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: poetry run python src/main.py
 
       - name: Setup Hugo
