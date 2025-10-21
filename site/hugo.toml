@@ -9,6 +9,10 @@ theme = "ananke"
   [params.data]
     pipelineDb = "../pipeline/data/pipeline.db"
 
+[services]
+  [services.googleAnalytics]
+    ID = "G-XXXXXXXXXX" # Replace with your Google Analytics Measurement ID
+
 [menu]
   [[menu.main]]
     name = "About"

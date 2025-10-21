@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "content": {
+    "message": "This website uses cookies to ensure you get the best experience on our website.",
+    "dismiss": "Got it!",
+    "link": "Learn more",
+    "href": "/privacy-policy/" // You might want to create a privacy policy page
+  },
+  onInitialise: function (status) {
+    if (status == cookieconsent.status.allow) {
+      // Enable Google Analytics if cookies are allowed
+      if (typeof window.ga === 'function') {
+        window.ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+        window.ga('send', 'pageview');
+      }
+    }
+  },
+  onStatusChange: function(status) {
+    if (this.has  "allow") {
+      // Enable Google Analytics if cookies are allowed
+      if (typeof window.ga === 'function') {
+        window.ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+        window.ga('send', 'pageview');
+      }
+    }
+  }
+})
+});
+</script>
