@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 <script>
+const gaMeasurementId = '{{ printf "%s" site.Config.Services.GoogleAnalytics.ID }}';
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
@@ -21,7 +22,7 @@ window.cookieconsent.initialise({
     if (status == cookieconsent.status.allow) {
       // Enable Google Analytics if cookies are allowed
       if (typeof window.ga === 'function') {
-        window.ga('create', '{{ $.Site.Config.Services.GoogleAnalytics.ID }}', 'auto');
+        window.ga('create', gaMeasurementId, 'auto');
         window.ga('send', 'pageview');
       }
     }
@@ -30,7 +31,7 @@ window.cookieconsent.initialise({
     if (this.has  "allow") {
       // Enable Google Analytics if cookies are allowed
       if (typeof window.ga === 'function') {
-        window.ga('create', '{{ $.Site.Config.Services.GoogleAnalytics.ID }}', 'auto');
+        window.ga('create', gaMeasurementId, 'auto');
         window.ga('send', 'pageview');
       }
     }
