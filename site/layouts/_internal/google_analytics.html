@@ -1,4 +1,4 @@
-{{ if .GoogleAnalyticsID }}
+{{ if $.Site.GoogleAnalyticsID }}
 {{ if (eq (getenv "HUGO_ENV") "production") }}
 <script>
   // Check if cookie consent has been given
@@ -8,7 +8,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '{{ .GoogleAnalyticsID }}', 'auto');
+    ga('create', '{{ $.Site.GoogleAnalyticsID }}', 'auto');
     ga('send', 'pageview');
   }
 </script>
