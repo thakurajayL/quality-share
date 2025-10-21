@@ -10,15 +10,17 @@ class TestGitHubManager(unittest.TestCase):
     def setUp(self, MockGithub):
         self.mock_github_instance = MockGithub.return_value
         self.mock_repo = MagicMock()
-        self.mock_github_instance.get_user.return_value.get_repo.return_value = self.mock_repo
+        self.mock_github_instance.get_repo.return_value = self.mock_repo
         self.manager = GitHubManager(repo_name="test-repo")
 
     def test_create_branch(self):
-        self.mock_repo.get_git_ref.return_value.sha = "12345"
+        mock_commit = MagicMock()
+        mock_commit.sha = "12345"
+        self.mock_repo.get_branch.return_value.commit = mock_commit
         self.manager.create_branch("new-branch")
         self.mock_repo.create_git_ref.assert_called_once_with("refs/heads/new-branch", "12345")
 
-    def test_commit_file(self):
+    def test_commit_file():
         mock_contents = MagicMock()
         mock_contents.path = "test.md"
         mock_contents.sha = "old_sha"
@@ -27,9 +29,9 @@ class TestGitHubManager(unittest.TestCase):
         self.mock_repo.update_file.assert_called_once_with("test.md", "commit message", "new content", "old_sha", branch="new-branch")
 
     def test_create_pull_request(self):
-        mock_pr = MagicMock()
-        mock_pr.html_url = "http://github.com/pr/1"
-        self.mock_repo.create_pull.return_value = mock_pr
+        mock_pr_object = MagicMock()
+        mock_pr_object.html_url = "http://github.com/pr/1"
+        self.mock_repo.create_pull.return_value = mock_pr_object
         pr_url = self.manager.create_pull_request("PR Title", "PR Body", "head-branch")
         self.assertEqual(pr_url, "http://github.com/pr/1")
         self.mock_repo.create_pull.assert_called_once_with(title="PR Title", body="PR Body", head="head-branch", base="main")

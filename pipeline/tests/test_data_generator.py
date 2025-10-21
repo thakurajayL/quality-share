@@ -22,7 +22,7 @@ class TestDataGenerator(unittest.TestCase):
                 summary TEXT,
                 source_name TEXT,
                 content_type TEXT NOT NULL,
-                published_date DATETIME,
+                publication_date DATETIME,
                 authors TEXT,
                 tags TEXT
             );
@@ -55,7 +55,7 @@ class TestDataGenerator(unittest.TestCase):
     def test_generate_articles_json_with_data(self):
         # Insert some dummy data
         self.conn.execute("""
-            INSERT INTO published_content (id, title, url, summary, source_name, content_type, published_date, authors, tags)
+            INSERT INTO published_content (id, title, url, summary, source_name, content_type, publication_date, authors, tags)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             "article-1",
@@ -69,7 +69,7 @@ class TestDataGenerator(unittest.TestCase):
             json.dumps(["tag1", "tag2"])
         ))
         self.conn.execute("""
-            INSERT INTO published_content (id, title, url, summary, source_name, content_type, published_date, authors, tags)
+            INSERT INTO published_content (id, title, url, summary, source_name, content_type, publication_date, authors, tags)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             "article-2",
@@ -94,7 +94,7 @@ class TestDataGenerator(unittest.TestCase):
                 "summary": "Summary 2",
                 "source_name": "Source 2",
                 "content_type": "RESEARCH_PAPER",
-                "published_date": datetime(2025, 2, 1).isoformat(),
+                "publication_date": datetime(2025, 2, 1).isoformat(),
                 "authors": ["Author B", "Author C"],
                 "tags": ["tag3"]
             },
@@ -105,7 +105,7 @@ class TestDataGenerator(unittest.TestCase):
                 "summary": "Summary 1",
                 "source_name": "Source 1",
                 "content_type": "BLOG_POST",
-                "published_date": datetime(2025, 1, 1).isoformat(),
+                "publication_date": datetime(2025, 1, 1).isoformat(),
                 "authors": ["Author A"],
                 "tags": ["tag1", "tag2"]
             }
