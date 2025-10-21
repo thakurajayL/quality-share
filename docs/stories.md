@@ -86,11 +86,11 @@ This document contains the user stories for the Quality Share project, organized
 
 *   **Story 4.1:** As a project owner, I want to integrate a secrets scanning tool into the CI/CD workflow, so that we can prevent accidental commitment of secrets.
     *   **Status:** Complete
-*   **Story 4.2:** As a developer, I want to receive email notifications for any CI/CD pipeline failures, so that I can promptly investigate and resolve issues.
+*   **Story 4.2:** As a developer, I want to receive email notifications for any CI/CD pipeline failures, so that I can promptly investigate and resolve issues using GitHub's built-in notification features.
     *   **Status:** Complete
 *   **Story 4.3:** As a project owner, I want to implement Google Analytics with a cookie consent banner, so that we can gather website usage data while respecting user privacy.
     *   **Status:** Complete
 *   **Story 4.4:** As a project owner, I want to enable `Dependabot` to automatically scan our. dependencies for vulnerabilities, so that we can keep our project secure.
     *   **Status:** Complete
-*   **Story 4.5:** As a project owner, I want to configure all the necessary secrets (e.g., `GITHUB_TOKEN`, `SENDGRID_API_KEY`, `OPENAI_API_KEY`, `GOOGLE_ANALYTICS_MEASUREMENT_ID`) in the GitHub repository, so that the CI/CD pipelines can run successfully.
-    *   **Status:** To Do
+*   **Story 4.5:** As a project owner, I want to configure all the necessary secrets (e.g., `OPENAI_API_KEY`, `GOOGLE_ANALYTICS_MEASUREMENT_ID`) in the GitHub repository, so that the CI/CD pipelines can run successfully.
+    *   **Status:** Complete
