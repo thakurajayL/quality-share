@@ -1,6 +1,6 @@
 
 ---
-title: "Curated Article from https://highscalability.com/google-pro-tip-use-back-of-the-envelope-calculations-to-choo/"
+title: "GOOGLE PRO TIP USE BACK OF THE ENVELOPE CALCULATIONS"
 published_date: 2025-10-22T17:18:44.934252
 link: "https://highscalability.com/google-pro-tip-use-back-of-the-envelope-calculations-to-choo/"
 authors: "Jeff Dean from Google"
@@ -12,7 +12,6 @@ tags:
   - Distributed systems
   - System design
   - Measurement
-categories:
-  - BLOG_POST
+content_type: blog
 ---
 
