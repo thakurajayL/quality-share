@@ -1,8 +1,20 @@
 from datetime import datetime
-from content_classifier import ContentType
+from typing import List, Optional
 import json
+import yaml # Import yaml for proper YAML dumping
 
-def create_markdown_content(title: str, link: str, summary: str, tags: list[str], published_date: datetime, content_type: str, authors: list[str] = None, doi: str = None) -> str:
+from article_schema import ArticleFrontMatter # Import the schema
+
+def create_markdown_content(
+    title: str,
+    link: str,
+    summary: str,
+    tags: List[str],
+    published_date: datetime,
+    content_type: str,
+    authors: Optional[List[str]] = None,
+    doi: Optional[str] = None
+) -> str:
     """Generates a Markdown string with YAML front matter for a new article.
 
     Args:
@@ -18,29 +30,34 @@ def create_markdown_content(title: str, link: str, summary: str, tags: list[str]
     Returns:
         A Markdown string with YAML front matter.
     """
-    tags_yaml = ""
-    if tags:
-        formatted_tags = [f"  - {tag}" for tag in tags]
-        tags_yaml = "\n" + "\n".join(formatted_tags)
+    # Create an instance of the schema for validation and consistent structure
+    article_data = ArticleFrontMatter(
+        title=title,
+        link=link,
+        summary=summary,
+        tags=tags,
+        published_date=published_date, # This will be aliased to 'date' in the output
+        content_type=content_type,
+        authors=authors,
+        doi=doi
+    )
 
-    authors_yaml = ""
-    if authors:
-        formatted_authors = [f"  - {author}" for author in authors]
-        authors_yaml = "\nauthors:\n" + "\n".join(formatted_authors)
+    # Convert the Pydantic model to a dictionary, using aliases for keys
+    # and excluding None values for cleaner YAML
+    front_matter_dict = article_data.model_dump(by_alias=True, exclude_none=True)
 
-    doi_yaml = f"\ndoi: \"{doi}\"" if doi else ""
+    # Ensure date is formatted correctly for YAML
+    if 'date' in front_matter_dict and isinstance(front_matter_dict['date'], datetime):
+        front_matter_dict['date'] = front_matter_dict['date'].isoformat()
 
-    front_matter = f"""
----
-title: "{title}"
-published_date: {published_date.isoformat()}
-link: "{link}"
-summary: "{summary}"
-tags:{tags_yaml}
-categories:
-  - {content_type}{authors_yaml}{doi_yaml}
----
+    # Use PyYAML to dump the dictionary to a YAML string
+    yaml_front_matter = yaml.dump(front_matter_dict, sort_keys=False, default_flow_style=False, allow_unicode=True)
+
+    # Construct the final Markdown content
+    markdown_content = f"""---
+{yaml_front_matter}---
 
 """
 
-    return front_matter
+    return markdown_content
+

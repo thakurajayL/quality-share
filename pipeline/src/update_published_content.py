@@ -5,8 +5,10 @@ import sqlite3
 from pathlib import Path
 from datetime import datetime, timezone
 import json
+from pydantic import ValidationError
 
 from database import get_db_connection, create_database
+from article_schema import ArticleFrontMatter # Import the schema
 
 ARTICLE_CONTENT_PATH = Path(__file__).parent.parent.parent / "site" / "content" / "posts"
 
@@ -21,39 +23,26 @@ def update_published_content_table():
             print(f"DEBUG: Processing file: {markdown_file.name}")
             print(f"DEBUG: Front matter for {markdown_file.name}: {post.metadata}")
             
-            # Extract data from front matter
-            article_id = post.metadata.get('id', markdown_file.stem) # Use filename as ID if not present
-            title = post.metadata.get('title')
-            url = post.metadata.get('link')
-            summary = post.metadata.get('summary')
-            source_name = post.metadata.get('source_name', 'Unknown')
-            content_type = post.metadata.get('content_type')
-            publication_date_str = post.metadata.get('published_date')
-            if publication_date_str is None:
-                print(f"DEBUG: 'published_date' is missing for {markdown_file.name}. Metadata: {post.metadata}")
-                print(f"Skipping {markdown_file.name}: 'published_date' is missing from front matter.")
+            # Validate front matter against the schema
+            try:
+                article_data = ArticleFrontMatter.model_validate(post.metadata)
+            except ValidationError as e:
+                print(f"Skipping {markdown_file.name}: Front matter validation failed: {e}")
                 continue
 
-            authors_data = post.metadata.get('authors', [])
-            if isinstance(authors_data, str):
-                authors_data = [authors_data]
-            authors = json.dumps(authors_data)
-            doi = post.metadata.get('doi', '')
-            tags_data = post.metadata.get('tags', [])
-            if isinstance(tags_data, str):
-                tags_data = [tags_data]
-            tags = json.dumps(tags_data)
+            # Extract data from validated schema
+            article_id = markdown_file.stem # Use filename as ID
+            title = article_data.title
+            url = article_data.link
+            summary = article_data.summary
+            source_name = post.metadata.get('source_name', 'Unknown') # source_name is not in schema, so get directly
+            content_type = article_data.content_type
+            publication_date = article_data.published_date
+            authors = json.dumps(article_data.authors) if article_data.authors else None
+            doi = article_data.doi
+            tags = json.dumps(article_data.tags) if article_data.tags else None
 
-            if not all([title, url, content_type, publication_date_str]):
-                print(f"Skipping {markdown_file.name}: Missing required front matter fields.")
-                continue
-
-            # Ensure publication_date is a datetime object
-            if isinstance(publication_date_str, str):
-                publication_date = datetime.fromisoformat(publication_date_str.replace('Z', '+00:00'))
-            else:
-                publication_date = publication_date_str # Assume it's already a datetime object
-
+            # Ensure publication_date is in UTC and naive for SQLite
             if publication_date.tzinfo is not None:
                 publication_date = publication_date.astimezone(timezone.utc).replace(tzinfo=None)
 
@@ -87,9 +76,6 @@ def update_published_content_table():
             import traceback
             traceback.print_exc()
             sys.exit(1)
-
-if __name__ == "__main__":
-    update_published_content_table()
 
 if __name__ == "__main__":
     update_published_content_table()
