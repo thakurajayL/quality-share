@@ -26,15 +26,3 @@ theme = "ananke"
     name = "Glossary"
     url = "/glossary/"
     weight = 3
-  [[menu.main]]
-    name = "Blog Posts"
-    url = "/categories/blog_post/"
-    weight = 4
-  [[menu.main]]
-    name = "Research Papers"
-    url = "/categories/research_paper/"
-    weight = 5
-  [[menu.main]]
-    name = "Root Cause Analysis"
-    url = "/categories/root_cause_analysis/"
-    weight = 6
