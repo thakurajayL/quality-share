@@ -15,8 +15,16 @@ class GitHubManager:
         self.repo.create_git_ref(f"refs/heads/{branch_name}", base_commit.sha)
 
     def commit_file(self, branch_name: str, file_path: str, content: str, commit_message: str):
-        contents = self.repo.get_contents(file_path, ref=branch_name)
-        self.repo.update_file(contents.path, commit_message, content, contents.sha, branch=branch_name)
+        try:
+            # Try to get existing file content to update it
+            contents = self.repo.get_contents(file_path, ref=branch_name)
+            self.repo.update_file(contents.path, commit_message, content, contents.sha, branch=branch_name)
+        except Exception as e:
+            if "404" in str(e):
+                # File does not exist, create it
+                self.repo.create_file(file_path, commit_message, content, branch=branch_name)
+            else:
+                raise e
 
     def create_pull_request(self, title: str, body: str, head_branch: str, base_branch: str = "main"):
         pr = self.repo.create_pull(title=title, body=body, head=head_branch, base=base_branch)
