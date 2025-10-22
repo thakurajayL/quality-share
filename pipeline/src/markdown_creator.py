@@ -33,7 +33,7 @@ def create_markdown_content(title: str, link: str, summary: str, tags: list[str]
     front_matter = f"""
 ---
 title: "{title}"
-date: {published_date.isoformat()}
+published_date: {published_date.isoformat()}
 link: "{link}"
 summary: "{summary}"
 tags:{tags_yaml}
