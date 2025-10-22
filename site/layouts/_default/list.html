@@ -4,12 +4,26 @@
       {{- .Content -}}
     </section>
     <section class="flex-ns mt5 flex-wrap justify-around">
-      {{ range .Paginator.Pages }}
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <a href="{{ .Permalink }}" class="db link blue hover-dark-blue">
-            {{ .Render "summary" }}
-          </a>
-        </div>
+      {{ $currentCategory := .Data.Term }}
+      {{ range $.Site.Data.articles }}
+        {{ if eq .content_type $currentCategory }}
+          <div class="w-100 w-30-l mb4 relative bg-white">
+            <a href="{{ .url }}" class="db link blue hover-dark-blue">
+              <div class="bg-white mb3 pa4 gray overflow-hidden">
+                <span class="f6 db">{{ .publication_date | dateFormat "January 2, 2006" }}</span>
+                <h1 class="f3 lh-title mb3">{{ .title }}</h1>
+                <div class="nested-links f5 lh-copy gray mb3">
+                  <p>{{ .summary }}</p>
+                </div>
+                <div class="mt3">
+                  {{ range .tags }}
+                    <a href="#" class="f6 link dim ba bw1 ph3 pv2 mb2 dib mr2" rel="tag">{{ . }}</a>
+                  {{ end }}
+                </div>
+              </div>
+            </a>
+          </div>
+        {{ end }}
       {{ end }}
     </section>
     {{- template "_internal/pagination.html" . -}}
