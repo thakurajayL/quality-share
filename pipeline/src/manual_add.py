@@ -48,7 +48,7 @@ def main():
     title = f"Curated Article from {article_url}"
     published_date = datetime.now()
 
-    markdown_content = create_markdown_content(title, article_url, summary, tags, published_date)
+    markdown_content = create_markdown_content(title, article_url, summary, tags, published_date, content_type.name)
 
     # 5. GitHub Operations
     repo_name = os.getenv("GITHUB_REPO_NAME")
