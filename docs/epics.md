@@ -20,7 +20,7 @@ This document outlines the high-level epics for the Minimum Viable Product (MVP)
 
 ### Epic 3: Website & Content Display (MVP)
 
-*   **Description:** This epic covers the user-facing part of the project. It includes creating the Hugo templates and layouts to display the curated content, building the "About" page, and ensuring the site is accessible and responsive. This also includes adding a LinkedIn profile link, a section for architectural decisions, a glossary, separate menus for content types, a user feedback mechanism, dedicated pages for each article, and a "New" badge for recently added content.
+*   **Description:** This epic covers the user-facing part of the project. It includes creating the Hugo templates and layouts to display the curated content, building the "About" page, and ensuring the site is accessible and responsive. This also includes adding a LinkedIn profile link, a section for architectural decisions, a glossary, a user feedback mechanism, dedicated pages for each article, and a "New" badge for recently added content.
 *   **Goal:** To create a clean, simple, and accessible website for presenting the curated content to users.
 
 ---

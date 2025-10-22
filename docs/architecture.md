@@ -270,11 +270,11 @@ This section defines the error handling approach for the project's components.
 
 *   **Proactive Error Notification:** For the MVP, reviewing GitHub Actions logs will be the primary method for identifying skipped articles or pipeline failures. Post-MVP, a more proactive notification system (such as automatically creating GitHub Issues for skipped articles) will be implemented.
 
-## 11. Documentation Strategy
+### 11. Documentation Strategy
 
 This section defines the documentation strategy for the project.
 
-*   **Project Documentation:** The `docs/` folder will serve as the single source of truth for project-level documentation. Each file will have a clear purpose, as defined by the header note at the top of each file.
+*   **Project Documentation:** The `docs/` folder will serve as the single source of truth for project-level documentation. Each file will have a clear purpose, as defined by the header note at the top of each file. **As a mandatory checkpoint for each user story, relevant documentation in the `docs/` folder must be reviewed and updated to reflect any changes or new features introduced by the story.**
 *   **Code Documentation:** All Python code, especially public modules and functions, must have docstrings explaining their purpose, arguments, and return values.
 *   **Architectural Decision Records (ADRs):** The `site/content/decisions` folder will be used to log all significant architectural decisions. This creates a clear history of *why* certain decisions were made.
 *   **README:** The `README.md` file will serve as the main entry point for the project, providing a high-level overview and links to the other documentation.

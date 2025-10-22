@@ -1,0 +1,49 @@
+name: Manual Add Article
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_url:
+        description: 'The URL of the article to process'
+        required: true
+        type: string
+      content_type_override:
+        description: 'Optional: Override content type (e.g., BLOG_POST, RESEARCH_PAPER, ROOT_CAUSE_ANALYSIS, UNKNOWN)'
+        required: false
+        type: choice
+        options:
+          - 'BLOG_POST'
+          - 'RESEARCH_PAPER'
+          - 'ROOT_CAUSE_ANALYSIS'
+          - 'UNKNOWN'
+        default: 'UNKNOWN'
+
+jobs:
+  add_article:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Poetry
+        run: pip install poetry
+
+      - name: Install dependencies
+        working-directory: ./pipeline
+        run: poetry install
+
+      - name: Run manual_add.py
+        working-directory: ./pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO_NAME: ${{ github.repository }} # Automatically gets the current repository name
+        run: |
+          poetry run python src/manual_add.py \
+            "${{ github.event.inputs.article_url }}" \
+            --type "${{ github.event.inputs.content_type_override }}"

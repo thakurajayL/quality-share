@@ -17,7 +17,7 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 1.5:** As a developer, I want a basic testing workflow that runs `pytest` on every Pull Request to ensure code quality, with a target of 80% test coverage for the Python pipeline.
     *   **Status:** Complete
 *   **Story 1.6:** As a project owner, I want to ensure that the implementation of the project is consistent with the architectural decisions and requirements documented in the `docs` directory, so that we have a high-quality and maintainable codebase.
-    *   **Status:** To Do
+    *   **Status:** Complete
 
 ---
 
@@ -45,6 +45,12 @@ This document contains the user stories for the Quality Share project, organized
     *   As a developer, I want the pipeline to generate a `site/data/articles.json` file from the `published_content` table in the SQLite database, so that Hugo can easily access the curated article data.
     *   **Status:** Complete
 *   **Story 2.9:** As a developer, I want to configure the AI Curation Pipeline to run on a recurring schedule using GitHub Actions, so that new content is discovered and processed automatically without manual intervention.
+    *   **Status:** Complete
+
+*   **Story 2.10:** As a developer, I want the AI Curation Pipeline to check for existing open Pull Requests for an article before creating a new one, so that duplicate Pull Requests are avoided.
+    *   **Status:** To Do
+
+*   **Story 2.11:** As a librarian, I want to trigger the manual article addition process via a GitHub Action, so that I can securely provide article URLs and content types without handling API tokens locally.
     *   **Status:** Complete
 
 ---
@@ -78,6 +84,9 @@ This document contains the user stories for the Quality Share project, organized
 *   **Story 3.13:** As a returning visitor, I want to easily identify newly added articles, even if they are older, so that I don't miss any new content. This will be implemented with a "New" badge next to articles curated in the last 7 days.
     *   **Status:** To Do
 *   **Story 3.14:** As a project owner, I want to populate the privacy policy page with detailed information, so that users understand how their data is handled.
+    *   **Status:** To Do
+
+*   **Story 3.15:** As a project owner, I want to evaluate alternative Hugo themes, so that I can ensure the website has the most appealing and functional visual design.
     *   **Status:** To Do
 
 ---
