@@ -52,7 +52,7 @@ jobs:
 
       - name: Build Hugo site
         working-directory: ./site
-        run: hugo --minify --verbose
+        run: hugo --minify
 
       - name: Debug list site/public after build
         run: ls -R site/public
