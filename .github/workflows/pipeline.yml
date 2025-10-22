@@ -2,8 +2,8 @@ name: AI Curation Pipeline
 
 on:
   schedule:
-    # Run once a day at midnight UTC
-    - cron: '0 0 * * *'
+    # Run once a week (every Sunday at midnight UTC)
+    - cron: '0 0 * * 0'
   workflow_dispatch: # Allows manual triggering
 
 jobs:
