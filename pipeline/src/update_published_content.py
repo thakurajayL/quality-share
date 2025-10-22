@@ -48,8 +48,12 @@ def update_published_content_table():
                 print(f"Skipping {markdown_file.name}: Missing required front matter fields.")
                 continue
 
-            # publication_date_str is already a datetime object from frontmatter.load()
-            publication_date = publication_date_str
+            # Ensure publication_date is a datetime object
+            if isinstance(publication_date_str, str):
+                publication_date = datetime.fromisoformat(publication_date_str.replace('Z', '+00:00'))
+            else:
+                publication_date = publication_date_str # Assume it's already a datetime object
+
             if publication_date.tzinfo is not None:
                 publication_date = publication_date.astimezone(timezone.utc).replace(tzinfo=None)
 
