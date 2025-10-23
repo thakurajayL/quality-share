@@ -13,18 +13,16 @@ class TestMarkdownCreator(unittest.TestCase):
         published_date = datetime(2025, 10, 26, 10, 0, 0)
         content_type = ContentType.BLOG_POST.value
 
-        expected_markdown = """
----
-title: "Test Article Title"
+        expected_markdown = """---
+title: Test Article Title
 date: 2025-10-26T10:00:00
-link: "http://example.com/test-article"
-summary: "This is a concise summary of the test article."
+link: http://example.com/test-article
+summary: This is a concise summary of the test article.
 tags:
-  - tag1
-  - tag2
-  - tag3
-categories:
-  - BLOG_POST
+- tag1
+- tag2
+- tag3
+content_type: BLOG_POST
 ---
 
 """
@@ -40,15 +38,13 @@ categories:
         published_date = datetime(2025, 10, 26, 10, 0, 0)
         content_type = ContentType.RESEARCH_PAPER.value
 
-        expected_markdown = """
----
-title: "Test Article Title"
+        expected_markdown = """---
+title: Test Article Title
 date: 2025-10-26T10:00:00
-link: "http://example.com/test-article"
-summary: "This is a concise summary of the test article."
-tags:
-categories:
-  - RESEARCH_PAPER
+link: http://example.com/test-article
+summary: This is a concise summary of the test article.
+tags: []
+content_type: RESEARCH_PAPER
 ---
 
 """

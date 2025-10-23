@@ -5,19 +5,19 @@ from contextlib import contextmanager
 DATABASE_PATH = Path(__file__).parent.parent / "data" / "pipeline.db"
 
 @contextmanager
-def get_db_connection():
+def get_db_connection(db_path: Path = DATABASE_PATH):
     """Gets a connection to the SQLite database, handling setup and teardown."""
-    DATABASE_PATH.parent.mkdir(exist_ok=True)
-    conn = sqlite3.connect(DATABASE_PATH)
+    db_path.parent.mkdir(exist_ok=True)
+    conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     try:
         yield conn
     finally:
         conn.close()
 
-def create_database():
+def create_database(db_path: Path = DATABASE_PATH):
     """Creates the database and the visited_urls table if they don't exist."""
-    with get_db_connection() as conn:
+    with get_db_connection(db_path) as conn:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS visited_urls (
                 url TEXT PRIMARY KEY,

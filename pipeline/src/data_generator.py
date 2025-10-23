@@ -40,7 +40,18 @@ def generate_articles_json_and_markdown():
             else:
                 article['authors'] = []
 
-            articles_data.append(article)
+            # Transform the article data to the desired JSON structure
+            transformed_article = {
+                "title": article["title"],
+                "link": article["url"],
+                "summary": article["summary"],
+                "tags": article["tags"],
+                "date": datetime.fromisoformat(article["publication_date"]).isoformat(),
+                "content_type": article["content_type"],
+                "authors": article["authors"],
+                "doi": article.get("doi")
+            }
+            articles_data.append(transformed_article)
 
             # Create individual Markdown file
             file_name = slugify(article['title']) + ".md"

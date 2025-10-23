@@ -30,34 +30,24 @@ def create_markdown_content(
     Returns:
         A Markdown string with YAML front matter.
     """
-    # Create an instance of the schema for validation and consistent structure
-    article_data = ArticleFrontMatter(
-        title=title,
-        link=link,
-        summary=summary,
-        tags=tags,
-        published_date=published_date, # This will be aliased to 'date' in the output
-        content_type=content_type,
-        authors=authors,
-        doi=doi
-    )
+    front_matter = [
+        f"title: {title}",
+        f"date: {published_date.isoformat()}",
+        f"link: {link}",
+        f"summary: {summary}",
+    ]
+    if tags:
+        front_matter.append("tags:")
+        front_matter.extend([f"- {tag}" for tag in tags])
+    else:
+        front_matter.append("tags: []")
+    front_matter.append(f"content_type: {content_type}")
+    if authors:
+        front_matter.append("authors:")
+        front_matter.extend([f"- {author}" for author in authors])
+    if doi:
+        front_matter.append(f"doi: {doi}")
 
-    # Convert the Pydantic model to a dictionary, using aliases for keys
-    # and excluding None values for cleaner YAML
-    front_matter_dict = article_data.model_dump(by_alias=True, exclude_none=True)
-
-    # Ensure date is formatted correctly for YAML
-    if 'date' in front_matter_dict and isinstance(front_matter_dict['date'], datetime):
-        front_matter_dict['date'] = front_matter_dict['date'].isoformat()
-
-    # Use PyYAML to dump the dictionary to a YAML string
-    yaml_front_matter = yaml.dump(front_matter_dict, sort_keys=False, default_flow_style=False, allow_unicode=True)
-
-    # Construct the final Markdown content
-    markdown_content = f"""---
-{yaml_front_matter}---
-
-"""
-
+    yaml_front_matter = "\n".join(front_matter)
+    markdown_content = f"---\n{yaml_front_matter}\n---\n\n"
     return markdown_content
-

@@ -12,9 +12,9 @@ from article_schema import ArticleFrontMatter # Import the schema
 
 ARTICLE_CONTENT_PATH = Path(__file__).parent.parent.parent / "site" / "content" / "posts"
 
-def update_published_content_table():
+def update_published_content_table(db_path=None):
     """Reads Markdown files from site/content/posts and updates the published_content table."""
-    create_database() # Ensure database tables are created
+    create_database(db_path) # Ensure database tables are created
     print(f"Scanning for Markdown files in: {ARTICLE_CONTENT_PATH}")
     for markdown_file in ARTICLE_CONTENT_PATH.glob("*.md"):
         try:
@@ -37,7 +37,7 @@ def update_published_content_table():
             summary = article_data.summary
             source_name = post.metadata.get('source_name', 'Unknown') # source_name is not in schema, so get directly
             content_type = article_data.content_type
-            publication_date = article_data.published_date
+            publication_date = article_data.date
             authors = json.dumps(article_data.authors) if article_data.authors else None
             doi = article_data.doi
             tags = json.dumps(article_data.tags) if article_data.tags else None
@@ -46,7 +46,7 @@ def update_published_content_table():
             if publication_date.tzinfo is not None:
                 publication_date = publication_date.astimezone(timezone.utc).replace(tzinfo=None)
 
-            with get_db_connection() as conn:
+            with get_db_connection(db_path) as conn:
                 # Check if article already exists to prevent duplicates
                 cursor = conn.execute("SELECT id FROM published_content WHERE url = ?", (url,))
                 if cursor.fetchone():

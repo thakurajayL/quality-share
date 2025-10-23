@@ -54,65 +54,62 @@ class TestDataGenerator(unittest.TestCase):
 
     def test_generate_articles_json_with_data(self):
         # Insert some dummy data
-        self.conn.execute("""
-            INSERT INTO published_content (id, title, url, summary, source_name, content_type, publication_date, authors, tags)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            "article-1",
-            "Test Article 1",
-            "http://example.com/article1",
-            "Summary 1",
-            "Source 1",
-            "BLOG_POST",
-            datetime(2025, 1, 1).isoformat(),
-            json.dumps(["Author A"]),
-            json.dumps(["tag1", "tag2"])
-        ))
-        self.conn.execute("""
-            INSERT INTO published_content (id, title, url, summary, source_name, content_type, publication_date, authors, tags)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            "article-2",
-            "Test Article 2",
-            "http://example.com/article2",
-            "Summary 2",
-            "Source 2",
-            "RESEARCH_PAPER",
-            datetime(2025, 2, 1).isoformat(),
-            json.dumps(["Author B", "Author C"]),
-            json.dumps(["tag3"])
-        ))
-        self.conn.commit()
-
-        generate_articles_json_and_markdown()
-
-        expected_json_data = [
-            {
-                "id": "article-2",
-                "title": "Test Article 2",
-                "url": "http://example.com/article2",
-                "summary": "Summary 2",
-                "source_name": "Source 2",
-                "content_type": "RESEARCH_PAPER",
-                "publication_date": datetime(2025, 2, 1).isoformat(),
-                "authors": ["Author B", "Author C"],
-                "tags": ["tag3"]
-            },
-            {
-                "id": "article-1",
-                "title": "Test Article 1",
-                "url": "http://example.com/article1",
-                "summary": "Summary 1",
-                "source_name": "Source 1",
-                "content_type": "BLOG_POST",
-                "publication_date": datetime(2025, 1, 1).isoformat(),
-                "authors": ["Author A"],
-                "tags": ["tag1", "tag2"]
-            }
-        ]
-
-        # Assert that the JSON file was written correctly
-        self.mock_json_dump.assert_called_once_with(expected_json_data, unittest.mock.ANY, indent=4)
-
+                self.conn.execute("""
+                    INSERT INTO published_content (id, title, url, summary, source_name, content_type, publication_date, authors, tags)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    "article-1",
+                    "Test Article 1",
+                    "http://example.com/article1",
+                    "Summary 1",
+                    "Source 1",
+                    "BLOG_POST",
+                    datetime(2025, 1, 1),
+                    json.dumps(["Author A"]),
+                    json.dumps(["tag1", "tag2"])
+                ))
+                self.conn.execute("""
+                    INSERT INTO published_content (id, title, url, summary, source_name, content_type, publication_date, authors, tags)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    "article-2",
+                    "Test Article 2",
+                    "http://example.com/article2",
+                    "Summary 2",
+                    "Source 2",
+                    "RESEARCH_PAPER",
+                    datetime(2025, 2, 1),
+                    json.dumps(["Author B", "Author C"]),
+                    json.dumps(["tag3"])
+                ))
+                self.conn.commit()
+        
+                generate_articles_json_and_markdown()
+        
+                expected_json_data = [
+                    {
+                        "title": "Test Article 2",
+                        "link": "http://example.com/article2",
+                        "summary": "Summary 2",
+                        "tags": ["tag3"],
+                        "date": datetime(2025, 2, 1).isoformat(),
+                        "content_type": "RESEARCH_PAPER",
+                        "authors": ["Author B", "Author C"],
+                        "doi": None
+                    },
+                    {
+                        "title": "Test Article 1",
+                        "link": "http://example.com/article1",
+                        "summary": "Summary 1",
+                        "tags": ["tag1", "tag2"],
+                        "date": datetime(2025, 1, 1).isoformat(),
+                        "content_type": "BLOG_POST",
+                        "authors": ["Author A"],
+                        "doi": None
+                    }
+                ]
+        
+                # Assert that the JSON file was written correctly
+                self.mock_json_dump.assert_called_once_with(expected_json_data, unittest.mock.ANY, indent=4)
 if __name__ == '__main__':
     unittest.main()

@@ -7,7 +7,7 @@ class ArticleFrontMatter(BaseModel):
     link: str
     summary: str
     tags: List[str]
-    published_date: datetime = Field(alias="date") # Map to 'date' for Hugo compatibility
+    date: datetime = Field(alias="published_date") # Use 'date' for Hugo compatibility, 'published_date' for internal alias
     content_type: str
     authors: Optional[List[str]] = None
     doi: Optional[str] = None
