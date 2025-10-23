@@ -78,4 +78,5 @@ def update_published_content_table(db_path=None):
             sys.exit(1)
 
 if __name__ == "__main__":
-    update_published_content_table()
+    from database import DATABASE_PATH
+    update_published_content_table(DATABASE_PATH)

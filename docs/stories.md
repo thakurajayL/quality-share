@@ -54,7 +54,7 @@ This document contains the user stories for the Quality Share project, organized
     *   **Status:** Complete
 
 *   **Story 2.12:** As a developer, I want to define and enforce a formal schema for article front matter, so that inconsistencies like `date` vs. `published_date` and `categories` vs. `content_type` are prevented, ensuring robust and consistent article processing.
-    *   **Status:** To Do
+    *   **Status:** Complete
 
 *   **Story 2.13:** As a developer, I want the AI Curation Pipeline to robustly fetch articles from all configured sources, gracefully handling individual source failures and logging them, so that we ensure comprehensive content discovery and can identify problematic sources.
     *   **Status:** To Do
