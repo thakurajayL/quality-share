@@ -5,6 +5,7 @@ theme = "ananke"
 
 [params]
   description = "High-signal engineering articles, expertly curated. Because your time is too valuable for anything less."
+  mainSections = ["posts"]
   # Custom params for data sources
   [params.data]
     pipelineDb = "../pipeline/data/pipeline.db"
