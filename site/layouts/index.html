@@ -4,7 +4,7 @@
       {{ range $.Site.Data.articles }}
         <div class="relative w-100 mb4 bg-white nested-copy-line-height">
           <div class="bg-white mb3 pa4 gray overflow-hidden">
-            <span class="f6 db">{{ .publication_date | dateFormat "January 2, 2006" }}</span>
+            <span class="f6 db">{{ (time.AsTime .date).Format "January 2, 2006" }}</span>
             <h1 class="f3 lh-title mb3"><a href="{{ .url }}" class="color-inherit dim">{{ .title }}</a></h1>
             <div class="nested-links f5 lh-copy gray mb3">
               <p>{{ .summary }}</p>

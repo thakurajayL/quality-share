@@ -34,7 +34,7 @@ def create_markdown_content(
     """
     front_matter = [
         f"title: {title}",
-        f"date: {published_date.isoformat()}",
+        f"published_date: {published_date.isoformat()}",
         f"link: {link}",
         f"summary: {summary}",
     ]
