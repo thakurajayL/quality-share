@@ -32,6 +32,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Show git log
+        run: git log -n 1
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
