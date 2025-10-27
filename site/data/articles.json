@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Test Article Title",
+        "link": "http://example.com/test-article",
+        "summary": "A summary of the test article.",
+        "tags": [
+            "test",
+            "example"
+        ],
+        "date": "2025-01-01T10:00:00",
+        "content_type": "blog",
+        "authors": [
+            "Author One",
+            "Author Two"
+        ],
+        "doi": "10.1234/test"
+    },
+    {
+        "title": "Bad Article",
+        "link": "http://example.com/bad-article",
+        "summary": "A summary.",
+        "tags": [
+            "bad"
+        ],
+        "date": "2025-01-01T10:00:00",
+        "content_type": "blog",
+        "authors": [],
+        "doi": null
+    }
+]

@@ -25,9 +25,15 @@ def generate_articles_json_and_markdown():
         for row in cursor.fetchall():
             article = dict(row)
             
-            # Convert datetime objects to ISO format strings for JSON
-            if 'publication_date' in article and isinstance(article['publication_date'], datetime):
-                article['publication_date'] = article['publication_date'].isoformat()
+            # Convert datetime string from database to datetime object
+            if 'publication_date' in article and article['publication_date'] and isinstance(article['publication_date'], str):
+                try:
+                    # First, try to parse with microseconds
+                    dt_object = datetime.strptime(article['publication_date'], '%Y-%m-%d %H:%M:%S.%f')
+                except ValueError:
+                    # If that fails, parse without microseconds
+                    dt_object = datetime.strptime(article['publication_date'], '%Y-%m-%d %H:%M:%S')
+                article['publication_date'] = dt_object.isoformat()
             
             # Parse JSON strings back to Python objects if needed (e.g., tags, authors)
             if 'tags' in article and article['tags']:
@@ -46,7 +52,7 @@ def generate_articles_json_and_markdown():
                 "link": article["url"],
                 "summary": article["summary"],
                 "tags": article["tags"],
-                "date": datetime.fromisoformat(article["publication_date"]).isoformat(),
+                "date": article["publication_date"],
                 "content_type": article["content_type"],
                 "authors": article["authors"],
                 "doi": article.get("doi")
