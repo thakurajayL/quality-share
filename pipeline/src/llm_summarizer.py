@@ -1,7 +1,7 @@
 import os
 from langchain_openai import ChatOpenAI
-from langchain.chains.summarize import load_summarize_chain
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_classic.chains.summarize import load_summarize_chain
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
@@ -31,15 +31,6 @@ def summarize_text(text: str) -> str:
 
     return summary
 
-# Define the tagging prompt at module level
-tagging_prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful assistant that extracts relevant keywords and tags from text. Return tags as a comma-separated list."),
-    ("user", "Extract tags from the following text: {text}"),
-])
-
-# Create the tagging chain at module level
-tagging_chain = tagging_prompt | llm | StrOutputParser()
-
 def generate_tags(text: str) -> list[str]:
     """Generates a list of relevant tags from the given text using an LLM.
 
@@ -49,6 +40,15 @@ def generate_tags(text: str) -> list[str]:
     Returns:
         A list of relevant tags.
     """
+    # Define the tagging prompt at module level
+    tagging_prompt = ChatPromptTemplate.from_messages([
+        ("system", "You are a helpful assistant that extracts relevant keywords and tags from text. Return tags as a comma-separated list."),
+        ("user", "Extract tags from the following text: {text}"),
+    ])
+
+    # Create the tagging chain at module level
+    tagging_chain = tagging_prompt | llm | StrOutputParser()
+
     if not os.getenv("OPENAI_API_KEY"):
         raise ValueError("OPENAI_API_KEY environment variable not set.")
 
