@@ -1,22 +1,15 @@
 import os
 from langchain_openai import ChatOpenAI
+from langchain.chains.summarize import load_summarize_chain
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 # Initialize the LLM at module level
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 
-# Define the summarization prompt at module level
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful assistant that summarizes text concisely."),
-    ("user", "Summarize the following text: {text}"),
-])
-
-# Create the summarization chain at module level
-summarization_chain = prompt | llm | StrOutputParser()
-
 def summarize_text(text: str) -> str:
-    """Generates a concise summary of the given text using an LLM.
+    """Generates a concise summary of the given text using an LLM, handling long texts.
 
     Args:
         text: The text to summarize.
@@ -28,8 +21,13 @@ def summarize_text(text: str) -> str:
     if not os.getenv("OPENAI_API_KEY"):
         raise ValueError("OPENAI_API_KEY environment variable not set.")
 
-    # Invoke the chain to get the summary
-    summary = summarization_chain.invoke({"text": text})
+    # For long texts, we need to split them into chunks
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=200)
+    docs = text_splitter.create_documents([text])
+
+    # Use the map_reduce chain to handle long texts
+    chain = load_summarize_chain(llm, chain_type="map_reduce")
+    summary = chain.run(docs)
 
     return summary
 
@@ -53,6 +51,14 @@ def generate_tags(text: str) -> list[str]:
     """
     if not os.getenv("OPENAI_API_KEY"):
         raise ValueError("OPENAI_API_KEY environment variable not set.")
+
+    # For long texts, we can't process the whole text at once.
+    # We will truncate the text to fit within the context window.
+    # This is not ideal, but it's a simple solution for now.
+    max_text_length = 15000 # A bit less than the context window
+    if len(text) > max_text_length:
+        text = text[:max_text_length]
+
 
     tags_str = tagging_chain.invoke({"text": text})
     return [tag.strip() for tag in tags_str.split(',') if tag.strip()]
