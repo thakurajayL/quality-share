@@ -47,6 +47,9 @@ jobs:
         working-directory: ./pipeline
         run: poetry install
 
+      - name: Show markdown_creator.py
+        run: cat pipeline/src/markdown_creator.py
+
       - name: Run manual_add.py
         working-directory: ./pipeline
         env:
