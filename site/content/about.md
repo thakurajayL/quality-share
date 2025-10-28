@@ -17,7 +17,7 @@ We prioritize exceptional quality over a consistent publishing schedule. Content
 Our platform uses an AI-assisted, human-in-the-loop curation pipeline:
 
 1.  **AI Discovery:** An AI pipeline automatically discovers and processes potential articles from various engineering blogs and research journals.
-2.  **Human Curation:** A human librarian (you!) reviews, refines, and approves each article via a transparent Pull Request workflow.
+2.  **Human Curation:** A human librarian ([Ajay Thakur](https://www.linkedin.com/in/ajaylthakur/)) reviews, refines, and approves each article via a transparent Pull Request workflow.
 3.  **Static Site Generation:** Approved content is then published to this static website, ensuring fast, secure, and reliable access.
 
 ## Why Quality Share?
