@@ -28,7 +28,19 @@ jobs:
         uses: snok/install-poetry@v1
 
       - name: Install system dependencies
-        run: sudo apt-get update && sudo apt-get install -y libxml2-dev libxslt-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libxslt-dev
+          # Verify installation
+          dpkg -s libxml2-dev || echo "libxml2-dev not found"
+          dpkg -s libxslt-dev || echo "libxslt-dev not found"
+          ls -l /usr/include/libxml2 || echo "libxml2 include path not found"
+          ls -l /usr/lib/x86_64-linux-gnu/libxml2.so || echo "libxml2 shared library not found"
+          ls -l /usr/include/libxslt || echo "libxslt include path not found"
+          ls -l /usr/lib/x86_64-linux-gnu/libxslt.so || echo "libxslt shared library not found"
+          # Check environment variables
+          echo "PATH: $PATH"
+          echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 
       - name: Install dependencies
         working-directory: ./pipeline
