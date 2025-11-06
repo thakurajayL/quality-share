@@ -13,7 +13,10 @@ def extract_content(url: str) -> str:
         The clean, main text of the content.
     """
     try:
-        response = requests.get(url, timeout=10)
+        headers = {
+            'User-Agent': 'quality-share-bot/1.0'
+        }
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()  # Raise an exception for bad status codes
 
         # Check if the content is a PDF
