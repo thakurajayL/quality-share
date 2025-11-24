@@ -12,7 +12,7 @@ jobs:
       contents: write # For pushing the build output to gh-pages
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: true # Fetch Hugo themes (true needs Git 2.12 or higher)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
