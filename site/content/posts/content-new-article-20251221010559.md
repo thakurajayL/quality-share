@@ -1,0 +1,72 @@
+---
+title: DrP: Meta’s Root Cause Analysis Platform at Scale
+published_date: 2025-12-19T17:35:13+00:00
+link: https://engineering.fb.com/2025/12/19/data-infrastructure/drp-metas-root-cause-analysis-platform-at-scale/
+summary: DrP is a root cause analysis platform developed by Meta to automate incident investigations for large-scale systems. It has successfully reduced mean time to resolve incidents by 20-80% and is used by over 300 teams at Meta. DrP offers an SDK for creating investigation playbooks, a scalable backend for executing analyzers, integration with workflows, and a post-processing system for automated actions. By automating manual investigations, DrP improves efficiency, consistency, and scalability, leading to faster incident resolution and enhanced on-call productivity. The platform aims to evolve into an AI-native solution to further advance Meta's AI4Ops vision.
+tags:
+- incident investigation
+- digital landscape
+- large-scale systems
+- root cause analysis
+- RCA platform
+- Meta
+- mean time to resolve
+- MTTR
+- on-call toil
+- efficient incident resolution
+- system reliability
+- DrP
+- end-to-end platform
+- manual investigations
+- investigation playbooks
+- analyzers
+- SDK
+- scalable backend
+- integration with workflows
+- post-processing system
+- data access
+- problem isolation analysis
+- anomaly detection
+- event isolation
+- time series correlation
+- dimension analysis
+- alerts
+- incident management tools
+- automation
+- investigation process
+- engineering
+- analyzers
+- code review
+- backtesting
+- UI
+- CLI
+- alerts
+- incident management systems
+- execution
+- monitoring
+- insights
+- reducing MTTR
+- efficiency
+- consistency
+- scalability
+- on-call productivity
+- automation
+- engineering hours
+- on-call fatigue
+- scalability
+- adoption
+- mainstream workflows
+- alerting systems
+- widespread adoption
+- proven impact
+- continuous improvement
+- ML algorithms
+- AI-native platform
+- Meta
+- AI4Ops vision
+- user experience
+- acknowledgements
+- leadership
+content_type: ContentType.ROOT_CAUSE_ANALYSIS
+---
+
