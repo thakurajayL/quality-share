@@ -1,0 +1,84 @@
+---
+title: KernelEvolve: How Meta’s Ranking Engineer Agent Optimizes AI Infrastructure
+published_date: 2026-04-02T19:59:46+00:00
+link: https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/
+summary: The blog post introduces KernelEvolve, an automated system for optimizing low-level infrastructure for AI model operations at Meta. By treating kernel optimization as a search problem and exploring hundreds of alternatives, KernelEvolve significantly improves performance for various AI models on diverse hardware types. The system addresses the challenges of hardware heterogeneity and model architecture variation, enabling Meta to efficiently integrate and optimize heterogeneous hardware for training and inference. KernelEvolve has shown strong results in benchmark performance and production speedups, reducing development time from weeks to hours and representing a step towards continuous optimization of performance-critical infrastructure.
+tags:
+- AI
+- Meta
+- Ranking Engineer Agent
+- KernelEvolve
+- optimization
+- hardware
+- software
+- AI models
+- GPUs
+- AMD
+- MTIA silicon chips
+- CPUs
+- kernels
+- performance
+- ML model architecture
+- heterogeneous hardware
+- NVIDIA
+- AMD
+- MTIA chips
+- DSLs
+- CUDA
+- HIP
+- MTIA C++
+- computer architecture
+- AI accelerators
+- inference
+- training
+- model evolution
+- model iteration cycles
+- LLM
+- search problem
+- performance optimization
+- vendor libraries
+- GEMMs
+- convolutions
+- matrix multiplication
+- AI assistants
+- personalized recommendation
+- generative AI
+- deep learning
+- attention mechanisms
+- recommendation models
+- ads model
+- generative ads recommendation model
+- LLM-scale
+- model families
+- feature interaction layers
+- attention variants
+- hardware diversity
+- kernel growth
+- model architectures
+- operator types
+- long tail operators
+- data preprocessing
+- feature hashing
+- sequence truncation
+- code optimization
+- search algorithms
+- Monte Carlo tree search
+- evolutionary strategies
+- memory operator
+- knowledge base
+- correctness constraints
+- optimization guidance
+- debugging
+- tuning strategies
+- hierarchical knowledge base
+- profiling tools
+- TritonBench
+- PyTorch Profiler
+- NCU
+- Proton
+- MTIA Insight
+- performance evaluation
+- system-level execution timelines.
+content_type: ContentType.BLOG_POST
+---
+
