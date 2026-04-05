@@ -1,0 +1,72 @@
+---
+title: Meta Adaptive Ranking Model: Bending the Inference Scaling Curve to Serve LLM-Scale Models for Ads
+published_date: 2026-03-31T16:00:17+00:00
+link: https://engineering.fb.com/2026/03/31/ml-applications/meta-adaptive-ranking-model-bending-the-inference-scaling-curve-to-serve-llm-scale-models-for-ads/
+summary: Meta is using AI Recommendation Systems to enhance user experiences and advertising results. Their Adaptive Ranking Model balances complexity with efficiency to provide personalized ad experiences and maximize advertiser value. The model addresses challenges through innovations in scaling, system design, and infrastructure, resulting in increased ad conversions and click-through rates on Instagram. It optimizes graph and kernel specialization, reduces latency, and improves hardware utilization. The model is continuously evolving to improve performance and efficiency, with a focus on real-time adaptation and personalized user experiences.
+tags:
+- AI Recommendation Systems
+- RecSys
+- Meta
+- Ads Recommender
+- LLM-scale
+- complexity
+- inference trilemma
+- model complexity
+- latency
+- cost efficiency
+- Meta Adaptive Ranking Model
+- intelligent request routing
+- model scaling
+- hardware-aware model architectures
+- serving infrastructure
+- ad conversions
+- ad click through rate
+- real-time ads recommendation
+- model-system co-design
+- multi-card architectures
+- hardware-specific optimizations
+- parameter scaling
+- deep model-system co-design
+- computational efficiency
+- model complexity
+- system efficiency
+- latency impacts
+- cost efficiency
+- inference-efficient model scaling
+- structural throughput
+- architectural refinements
+- network bottlenecks
+- complexity overhead
+- holistic latency optimization
+- feature preprocessing
+- model-system codesign
+- computational precision
+- graph execution
+- high-throughput inference
+- FP8 quantization
+- hardware-aware graph
+- kernel specialization
+- serving infrastructure
+- trillion parameter scale
+- multi-GPU-card embedding scaling
+- runtime resilience
+- reliability
+- evolving Adaptive Ranking Model Stack
+- infrastructure
+- real-time fluctuations
+- user signal density
+- request patterns
+- inference execution efficiency
+- model compression
+- ultra-low precision quantization
+- agentic optimization frameworks
+- kernel performance optimizations
+- learning speed
+- model freshness
+- weight updates
+- personal experiences
+- ROAS
+- advertisers.
+content_type: ContentType.BLOG_POST
+---
+
