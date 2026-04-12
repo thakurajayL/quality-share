@@ -1,0 +1,94 @@
+---
+title: How Meta Used AI to Map Tribal Knowledge in Large-Scale Data Pipelines
+published_date: 2026-04-06T16:00:50+00:00
+link: https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines/
+summary: The article highlights the importance of providing AI coding assistants with a clear understanding of the codebase to enhance their effectiveness. The authors developed a pre-compute engine with specialized AI agents to create context files encoding tribal knowledge from their codebase, resulting in structured navigation guides, documented patterns, and reduced AI tool calls. The system maintains itself by validating file paths, detecting coverage gaps, and auto-fixing issues. The approach of teaching AI agents before exploration and using a "compass, not encyclopedia" principle proved successful in improving workflow efficiency and code quality. The authors challenge conventional wisdom on AI context files and offer recommendations for other teams to implement a similar approach. Future plans include expanding context coverage and integrating with code generation workflows.
+tags:
+- AI
+- coding assistants
+- Meta
+- data processing
+- repositories
+- languages
+- files
+- pre-compute engine
+- AI agents
+- structured navigation guides
+- code modules
+- design choices
+- relationships
+- tool calls
+- models
+- knowledge layer
+- automated jobs
+- file paths
+- coverage gaps
+- quality critics
+- stale references
+- map
+- pipeline
+- configuration
+- services
+- automation scripts
+- data field onboarding
+- subsystems
+- AI-powered systems
+- development tasks
+- explorer agents
+- module analysts
+- writers
+- critic passes
+- fixers
+- upgraders
+- prompt testers
+- gap-fillers
+- final critics
+- context files
+- compass
+- encyclopedia
+- quick commands
+- key files
+- non-obvious patterns
+- see also
+- orchestration layer
+- engineers
+- system
+- refreshes
+- dependency index
+- data flow maps
+- changes
+- propagation
+- results
+- metric
+- tribal knowledge
+- prompts
+- core pass rate
+- quality
+- critic agents
+- success rates
+- open-source
+- Python repositories
+- Django
+- matplotlib
+- training data
+- design decisions
+- tool calls
+- naming patterns
+- codebase
+- proprietary
+- domain-specific conventions
+- documentation
+- framework
+- quality gates
+- freshness
+- validation
+- self-repair
+- code generation workflows
+- context coverage
+- data infrastructure
+- emerging patterns
+- code reviews
+- commits.
+content_type: ContentType.BLOG_POST
+---
+
