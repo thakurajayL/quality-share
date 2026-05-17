@@ -1,0 +1,93 @@
+---
+title: How finance teams use Codex
+published_date: 2026-05-12T15:00:00+00:00
+link: https://openai.com/academy/how-finance-teams-use-codex
+summary: Codex is a tool that helps finance teams streamline their monthly business reviews, reporting, variance analysis, and planning processes by turning existing data into tangible outputs without the need for coding. It improves model reliability, refreshes executive reporting, explains variances, updates forecasts, and creates scenario planning artifacts. Codex reviews data, identifies key drivers, anomalies, and risks, and creates narrative documents for review by CFOs or executives.
+tags:
+- finance teams
+- Codex
+- review-ready assets
+- monthly business reviews
+- reporting
+- variance analysis
+- planning
+- close workbooks
+- revenue dashboards
+- expense dashboards
+- forecast updates
+- MBRs
+- owner notes
+- no coding required
+- plugins
+- Google Drive
+- SharePoint
+- Box
+- Spreadsheets
+- Presentations
+- Documents
+- Slack
+- Teams
+- Gmail
+- Outlook Email
+- CFO-ready story
+- key variances
+- risks
+- follow-ups
+- narrative document
+- source citations
+- reviewable first pass
+- judgment
+- analysis
+- decisions
+- model reliability
+- formulas
+- structure
+- sources
+- assumptions
+- financial model
+- supporting source files
+- review audience
+- cleanup rules
+- assumptions review
+- workbook structure
+- hardcodes
+- links
+- source tie-outs
+- output tabs
+- recurring executive reporting
+- refreshed metrics
+- commentary
+- open questions
+- forecast model
+- KPI dashboard
+- reporting pack
+- cash view
+- forecast notes
+- owner inputs
+- CFO or board reporting pack
+- variance analysis
+- actuals
+- budget
+- forecast
+- KPI lines
+- variance bridge
+- driver-ranked movements
+- anomalies
+- open questions
+- forecast-to-actual movement
+- scenario planning
+- assumption updates
+- business-owner inputs
+- planning calendar
+- base case
+- upside case
+- downside case
+- key sensitivities
+- risks
+- review notes
+- scenario rules
+- sensitivity table
+- leadership notes.
+content_type: ContentType.BLOG_POST
+---
+
