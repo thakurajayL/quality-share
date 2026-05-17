@@ -1,0 +1,72 @@
+---
+title: How ChatGPT adoption broadened in early 2026
+published_date: 2026-05-11T15:00:00+00:00
+link: https://openai.com/signals/research/2026q1-update
+summary: In early 2026, ChatGPT adoption grew among diverse age groups, genders, and countries. Users with feminine names and those over 35 increased, with expansion seen in Latin America, the Caribbean, Asia-Pacific, and Africa. Workplace tasks on consumer plans became more specialized, indicating broader adoption across professions. ChatGPT is increasingly used as a mainstream tool for recurring tasks by a diverse global audience.
+tags:
+- ChatGPT
+- adoption
+- 2026
+- consumer adoption
+- gender
+- age
+- geography
+- feminine names
+- countries
+- messages
+- plans
+- Free
+- Go
+- Plus
+- Pro
+- Codex
+- enterprise
+- education products
+- workplace
+- educational usage
+- gender inference methodology
+- age groups
+- users
+- messages
+- countries
+- per capita
+- Latin America
+- Caribbean
+- Asia-Pacific
+- Africa
+- rank
+- Dominican Republic
+- Haiti
+- Japan
+- Mexico
+- Tanzania
+- Brazil
+- Costa Rica
+- Myanmar
+- Papua New Guinea
+- Austria
+- work-related usage
+- written materials
+- visual materials
+- specialized tasks
+- workplace tasks
+- content creation
+- health-related documentation
+- information retrieval
+- professions
+- industries
+- mainstream tool
+- people
+- recurring tasks
+- work-related
+- non-work use
+- consumer accounts
+- repeatable use cases
+- OpenAI Signals
+- researchers
+- policymakers
+- AI
+- economy.
+content_type: ContentType.BLOG_POST
+---
+
