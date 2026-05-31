@@ -1,0 +1,79 @@
+---
+title: Cisco and OpenAI redefine enterprise engineering with Codex
+published_date: 2026-05-27T11:00:00+00:00
+link: https://openai.com/index/cisco
+summary: Cisco and OpenAI have partnered to integrate Codex, an AI development tool, into their engineering workflows, resulting in significant improvements such as increased AI feature creation, faster defect resolution, and saved engineering hours. Codex has been crucial in projects like AI Defense, compressing engineering work timelines. Cisco's feedback has helped shape Codex into an effective AI teammate for enterprise-scale operations. The collaboration has established a model for adopting next-generation AI, with Codex being used across multiple Cisco units to enhance productivity and code quality.
+tags:
+- Cisco
+- OpenAI
+- Codex
+- AI-native development
+- enterprise software
+- engineering
+- AI features
+- defect resolution
+- throughput
+- engineering hours
+- generative AI
+- real-world environments
+- new products
+- AI Defense
+- developer tool
+- production engineering workflows
+- multi-repository systems
+- C/C++
+- security
+- compliance
+- governance
+- enterprise scale
+- software lifecycle workflows
+- AI engineering
+- teammate
+- AI security
+- AI Defense
+- features
+- customers
+- cyber defense
+- GPT-5.5-Cyber
+- Defense Squad
+- engineering organization
+- code completion
+- automation
+- agency
+- interconnected repositories
+- complex languages
+- CLI-based
+- compile-test-fix loops
+- review
+- security
+- governance frameworks
+- workflow orchestration
+- build optimization
+- dependency graphs
+- defect remediation
+- CodeWatch
+- defect repair
+- C/C++ codebases
+- framework migrations
+- Splunk teams
+- React
+- UIs
+- repetitive changes
+- judgment-heavy decisions
+- plan document
+- production use
+- compliance
+- task management
+- development pipelines
+- technical partnership
+- workloads
+- leadership alignment
+- business units
+- productivity
+- code quality
+- time-to-resolution
+- AI-assisted development
+- operations.
+content_type: ContentType.BLOG_POST
+---
+
