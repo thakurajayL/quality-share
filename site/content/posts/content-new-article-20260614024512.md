@@ -1,0 +1,71 @@
+---
+title: How Preply combines AI and human tutors to personalize learning
+published_date: 2026-06-12T00:00:00+00:00
+link: https://openai.com/index/preply
+summary: Preply uses a combination of AI and human tutors to personalize language learning, with AI-generated lesson summaries and feedback. The use of OpenAI has led to high user engagement and satisfaction. Lesson Insights provide tailored feedback for learners and reduce administrative tasks for tutors. Preply plans to further personalize the learning experience and integrate AI into their operations. They believe in combining human teachers with AI technology for maximum efficiency, with OpenAI as a partner. They see the future as being human-led and AI-enabled.
+tags:
+- AI
+- human tutors
+- personalized learning
+- Preply
+- OpenAI
+- lesson summaries
+- feedback
+- language learning exercises
+- ChatGPT
+- tutors
+- Lesson Insights
+- product market fit score
+- satisfaction rating
+- marketplace
+- online learning
+- language education
+- one-to-one instruction
+- personalized plans
+- lesson notes
+- AI-powered experience
+- lesson transcript
+- grammar
+- vocabulary
+- pronunciation
+- actionable guidance
+- progress tracking
+- technology partner
+- language-learning tasks
+- state-of-the-art models
+- ecosystem
+- ChatGPT Enterprise
+- customer-facing AI strategy
+- Preply Classroom
+- structured report
+- homework
+- self-learning exercise engine
+- continuous learning experience
+- fluency
+- OpenAI APIs
+- customer service workflows
+- Codex
+- engineering workflow
+- AI coding assistants
+- code generation
+- product feedback
+- retention
+- novelty
+- value
+- teaching assistant
+- preparation time
+- cultural transformation
+- high-impact use cases
+- partnerships
+- company priority
+- enablement
+- user collaboration
+- future of language learning
+- personalized experience
+- agentic development tools
+- innovation
+- human teachers
+- AI-enabled.
+content_type: ContentType.BLOG_POST
+---
+
