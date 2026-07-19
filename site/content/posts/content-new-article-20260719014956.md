@@ -1,0 +1,95 @@
+---
+title: A scorecard for the AI age
+published_date: 2026-07-17T10:00:00+00:00
+link: https://openai.com/index/a-scorecard-for-the-ai-age
+summary: The article emphasizes the importance of measuring the value of AI based on work accomplished rather than just adoption. It introduces the concept of "Useful Intelligence per Dollar" as a metric to evaluate AI effectiveness. The article stresses the need to focus on task completion, cost, dependability of results, and economic improvement at scale. It also discusses the role of compute power in driving AI capabilities and efficiency, with the ultimate goal of making AI more useful, cost-effective, and dependable for individuals and organizations.
+tags:
+- AI
+- AI age
+- CFOs
+- value
+- software
+- adoption
+- work accomplished
+- economic question
+- cost
+- successful outcome
+- metric
+- cost per token
+- model
+- value creation
+- useful intelligence per dollar
+- tasks
+- customer issues
+- code changes
+- contracts
+- decisions
+- tokens
+- models
+- workflow
+- customer issue resolved
+- code change
+- contract reviewed
+- finance team
+- forecast review
+- ChatGPT Work
+- compute
+- reasoning
+- human review
+- retries
+- rework
+- price per token
+- outcome
+- model family
+- GPT-5.6
+- Sol
+- Terra
+- Luna
+- efficiency
+- capability
+- dependability
+- AI adoption
+- stages
+- exceptions
+- workflows
+- judgment
+- control
+- accuracy
+- quality bar
+- escalation
+- boundaries
+- safety
+- security
+- privacy
+- control
+- ChatGPT Enterprise
+- scale
+- companies
+- quality bar
+- total cost
+- compute
+- product quality
+- speed
+- availability
+- training compute
+- inference compute
+- infrastructure
+- algorithms
+- hardware
+- software
+- research
+- deployment
+- OpenAI
+- intelligence platform
+- ChatGPT
+- Codex
+- API
+- enterprises
+- useful intelligence per dollar
+- meaningful work
+- better decisions
+- human judgment
+- creativity.
+content_type: ContentType.BLOG_POST
+---
+
