@@ -1,0 +1,118 @@
+---
+title: Exploring Hierarchical Interest Representation For Meta Ads Deep Funnel Optimization
+published_date: 2026-07-15T17:00:52+00:00
+link: https://engineering.fb.com/2026/07/15/ai-research/exploring-hierarchical-interest-representation-for-meta-ads-deep-funnel-optimization/
+summary: Hierarchical Interest Representation is a research area focused on improving Meta's deep funnel ranking optimization by connecting users with relevant ads entities based on their interests. It utilizes transformer-based graph learning with bias-aware attention and self-supervised cross-view distillation to create multi-hierarchical interest representations. The project aims to enhance personalization, retrieval, and ranking architectures across the ads stack by blending real-world knowledge with engagement signals and incorporating learned interest representations through hierarchical encoders, bias composition, attention kernels, and cross-view distillation. The model is memory-efficient, topology-aware, and maintains causality through strict temporal order adherence, with a focus on engagement prediction and online graph infrastructure. The project aims to continue improving training efficiency, embedding freshness, and memory-efficient attention kernels for enhanced representational expressiveness.
+tags:
+- research
+- Meta Ads
+- upstream representation layer
+- Ads entities
+- users
+- advertisers
+- products
+- services
+- embeddings
+- interests
+- deep funnel ads
+- transformer
+- graph learning
+- attention
+- cross-view distillation
+- real-world knowledge
+- engagement signals
+- multimodal content
+- LLMs
+- sparse interactions
+- universal embeddings
+- Bag-of-Meaning interest tokens
+- personalization
+- retrieval
+- supervision
+- ranking architectures
+- billions of interactions
+- deep funnel ranking optimization
+- businesses
+- latent interest
+- recommendation ecosystem
+- GEM
+- Andromeda
+- Adaptive Ranking Model
+- user engagement
+- relevance
+- signal scarcity
+- deep funnel ad performance
+- relationships
+- multi-hierarchical granularities
+- modeling
+- graph topologies
+- interest clusters
+- semantic grasp
+- ad content
+- user intents
+- ad experiences
+- interest anchors
+- engagement datasets
+- world knowledge
+- AI
+- latent interests
+- signal dynamics
+- large networks
+- sparse connections
+- global relationships
+- common patterns
+- long-range relationships
+- graph networks
+- memory-efficient attention kernels
+- high-performance learning algorithms
+- relational knowledge representations
+- hierarchical granularities
+- representation layer
+- relational knowledge
+- users
+- ads entities
+- engagement patterns
+- hierarchical granularities
+- deep funnel optimization
+- structural shift
+- representation modeling
+- interest clusters
+- semantic knowledge
+- ad intents
+- ad content
+- technical challenges
+- user engagement
+- graph networks
+- signal scarcity
+- deep funnel ad performance
+- Hierarchical Interest Representation
+- upstream representation layer
+- relational knowledge representations
+- users
+- ads entities
+- hierarchical granularities
+- latent-space projections
+- graph data structure
+- dimension reduction
+- knowledge enrichment
+- relational representation
+- multi-hierarchical granularities
+- architecture
+- world knowledge
+- structure encoders
+- bias composition
+- attention kernel
+- training
+- cross-view distillation
+- engagement prediction
+- online graph infrastructure
+- causality
+- tokenization
+- Bag-of-Meaning Tokens
+- delivery stack
+- inverted-index retrieval
+- set aggregation
+- human interpretation.
+content_type: ContentType.BLOG_POST
+---
+
