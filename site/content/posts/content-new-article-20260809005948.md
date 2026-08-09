@@ -1,0 +1,77 @@
+---
+title: From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking
+published_date: 2026-08-05T19:20:20+00:00
+link: https://engineering.fb.com/2026/08/05/ml-applications/from-user-sequences-to-scaling-laws-a-multi-stage-architecture-for-metas-ads-ranking/
+summary: Meta's recommendation platforms utilize sequence learning to capture user preferences and intent, leading to improvements in conversions on Instagram and Facebook. Two architectural breakthroughs have enabled the scaling of sequence learning advancements into a production platform with predictable scaling laws. The multi-stage sequence model separates offline user modeling from online ranking tasks, with dense tokenization and target-aware attention efficiently learning feature interactions. The model architecture allows for predictable scaling and performance improvements, with techniques from the LLM domain being used to achieve optimal performance and efficiency tradeoff. The impact of multi-stage sequence modeling includes deeper user representation, scaling efficiency, and platform integration within Meta's Generative Ads Recommendation Model (GEM).
+tags:
+- sequence learning
+- ads recommendations
+- temporal signals
+- user interactions
+- user preferences
+- intent
+- modeling
+- order
+- timing
+- user actions
+- sparse features
+- sequence-aware representations
+- ad preferences
+- architectural breakthroughs
+- sequence model
+- offline user modeling
+- online ranking tasks
+- dense tokenization
+- target-aware attention
+- feature interactions
+- Instagram
+- Facebook
+- ad clicks
+- historical challenges
+- hybrid model configurations
+- knowledge transfer
+- manual feature engineering
+- scaling ceilings
+- transformer models
+- bottleneck
+- model complexity
+- serving efficiency
+- multi-stage sequence model
+- transformer-based sequence model
+- compute efficient
+- user histories
+- behavioral patterns
+- ad candidate signals
+- model innovations
+- Generative Ads Recommendation Model (GEM)
+- user behavioral understanding
+- scaling efficiency
+- tokenization approach
+- attention mechanisms
+- multi-head attention
+- model performance
+- compute
+- LLM-Style Scaling Law
+- model depth
+- content enrichment
+- model width
+- sequence length
+- levers for scaling
+- balanced model shape
+- multi-stage tunability
+- sequence composition
+- semantic feature representation
+- recommendation systems
+- user representations
+- scaling efficiency
+- platform integration
+- GEM
+- scaling law
+- architectural parity
+- mixture-of-experts
+- cross-user compute sharing
+- advanced attention mechanisms
+- technical publication.
+content_type: ContentType.BLOG_POST
+---
+
