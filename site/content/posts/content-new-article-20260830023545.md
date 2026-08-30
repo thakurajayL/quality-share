@@ -1,0 +1,115 @@
+---
+title: Jalapeño’s first results show industry-leading speed and efficiency in AI inference
+published_date: 2026-08-25T07:00:00+00:00
+link: https://openai.com/index/jalapeno-first-results
+summary: OpenAI's custom inference chip, Jalapeño, has demonstrated industry-leading speed and efficiency in AI inference, delivering higher throughput and lower latency. It shows significant improvements in performance per watt and end-to-end latency compared to existing systems, particularly optimized for language-model workloads. Jalapeño is the first generation of a multigenerational roadmap, with plans to deploy it within OpenAI's compute infrastructure by the end of the year, aiming to enable faster, more efficient, and more capable AI for a broader range of applications.
+tags:
+- AI inference
+- Jalapeño
+- OpenAI
+- custom chip
+- performance
+- efficiency
+- throughput
+- latency
+- GPT-OSS
+- DeepSeek
+- Kimi
+- architecture
+- models
+- power efficiency
+- real-world work
+- accelerator
+- programming
+- infrastructure
+- deployment
+- Gen 2
+- Gen 3
+- compute infrastructure
+- NVIDIA
+- training
+- deployment
+- software
+- scalability
+- TPS
+- end-to-end latency
+- mixed TPS
+- throughput
+- chip design
+- model optimization
+- language models
+- communication
+- data movement
+- system design
+- workload optimization
+- parallel programming
+- model architecture
+- real-time inference
+- batched-mode inference
+- fast-mode inference
+- ultra-fast-mode inference
+- operating leverage
+- AI development
+- model family
+- kernel optimization
+- Codex
+- GPT-Astra
+- human-AI collaboration
+- performance evaluation
+- benchmarking
+- Pareto frontier
+- full-stack advantage
+- customer benefits
+- demand growth
+- real-time response
+- interactive agents
+- artificial general intelligence
+- chip development
+- system architecture
+- network efficiency
+- memory bandwidth
+- data processing
+- workload optimization
+- real-world performance
+- power consumption
+- hardware efficiency
+- system integration
+- real-time processing
+- model performance
+- chip power rating
+- performance comparison
+- system optimization
+- workload testing
+- chip performance
+- system efficiency
+- system performance
+- system scalability
+- system reliability
+- system speed
+- system architecture
+- system design
+- system optimization
+- system efficiency
+- system performance
+- system scalability
+- system reliability
+- system speed
+- system architecture
+- system design
+- system optimization
+- system efficiency
+- system performance
+- system scalability
+- system reliability
+- system speed
+- system architecture
+- system design
+- system optimization
+- system efficiency
+- system performance
+- system scalability
+- system reliability
+- system speed.
+content_type: ContentType.BLOG_POST
+---
+
