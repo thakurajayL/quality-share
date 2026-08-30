@@ -1,0 +1,192 @@
+---
+title: Bringing ChatGPT for Teachers to more U.S. school districts
+published_date: 2026-08-26T10:00:00+00:00
+link: https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts
+summary: OpenAI is expanding its ChatGPT for Teachers program to more U.S. school districts, partnering with over 100,000 educators and staff. The program focuses on responsible AI adoption and data privacy, providing a secure space for educators to explore AI in education. OpenAI is introducing a National Data Privacy Agreement to simplify adoption processes. Educators are using AI tools to enhance teaching practices and streamline administrative tasks, empowering them to lead AI adoption in education.
+tags:
+- education
+- AI
+- ChatGPT
+- teachers
+- school districts
+- partnerships
+- privacy
+- data privacy
+- responsible AI adoption
+- training
+- educators
+- K-12
+- student data privacy
+- governance
+- security
+- administrative controls
+- OpenAI
+- National Data Privacy Agreement
+- FERPA
+- peer learning
+- classroom experiences
+- hands-on training
+- AI skills
+- AI Instruction
+- American Federation of Teachers
+- privacy protections
+- tools
+- lesson planning
+- curriculum
+- training programs
+- district partnerships
+- implementation model
+- AI adoption
+- skills development
+- classroom resources
+- AI in education
+- teacher-led adoption
+- voice
+- trust
+- district leaders
+- peer learning
+- AI Skills Jams
+- Walton Family Foundation
+- practical AI skills
+- National Academy
+- data privacy agreement
+- privacy infrastructure
+- state agreements
+- privacy process
+- legal protections
+- community requirements
+- AI tools
+- student data
+- student privacy
+- AI training
+- AI skills development
+- responsible AI
+- AI governance
+- AI implementation
+- AI adoption
+- AI tools
+- AI training
+- AI skills
+- AI Instruction
+- American Federation of Teachers
+- privacy protections
+- tools
+- lesson planning
+- curriculum
+- training programs
+- district partnerships
+- implementation model
+- AI adoption
+- skills development
+- classroom resources
+- AI in education
+- teacher-led adoption
+- voice
+- trust
+- district leaders
+- peer learning
+- AI Skills Jams
+- Walton Family Foundation
+- practical AI skills
+- National Academy
+- data privacy agreement
+- privacy infrastructure
+- state agreements
+- privacy process
+- legal protections
+- community requirements
+- AI tools
+- student data
+- student privacy
+- AI training
+- AI skills development
+- responsible AI
+- AI governance
+- AI implementation
+- AI adoption
+- AI tools
+- AI training
+- AI skills
+- AI Instruction
+- American Federation of Teachers
+- privacy protections
+- tools
+- lesson planning
+- curriculum
+- training programs
+- district partnerships
+- implementation model
+- AI adoption
+- skills development
+- classroom resources
+- AI in education
+- teacher-led adoption
+- voice
+- trust
+- district leaders
+- peer learning
+- AI Skills Jams
+- Walton Family Foundation
+- practical AI skills
+- National Academy
+- data privacy agreement
+- privacy infrastructure
+- state agreements
+- privacy process
+- legal protections
+- community requirements
+- AI tools
+- student data
+- student privacy
+- AI training
+- AI skills development
+- responsible AI
+- AI governance
+- AI implementation
+- AI adoption
+- AI tools
+- AI training
+- AI skills
+- AI Instruction
+- American Federation of Teachers
+- privacy protections
+- tools
+- lesson planning
+- curriculum
+- training programs
+- district partnerships
+- implementation model
+- AI adoption
+- skills development
+- classroom resources
+- AI in education
+- teacher-led adoption
+- voice
+- trust
+- district leaders
+- peer learning
+- AI Skills Jams
+- Walton Family Foundation
+- practical AI skills
+- National Academy
+- data privacy agreement
+- privacy infrastructure
+- state agreements
+- privacy process
+- legal protections
+- community requirements
+- AI tools
+- student data
+- student privacy
+- AI training
+- AI skills development
+- responsible AI
+- AI governance
+- AI implementation
+- AI adoption
+- AI tools
+- AI training
+- AI skills
+content_type: ContentType.BLOG_POST
+---
+
