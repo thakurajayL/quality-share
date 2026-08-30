@@ -1,0 +1,88 @@
+---
+title: Supporting Thailand’s next generation of AI startups
+published_date: 2026-08-28T02:00:00+00:00
+link: https://openai.com/index/supporting-next-generation-ai-startups-thailand
+summary: OpenAI and Thailand's Ministry of Higher Education, Science, Research and Innovation have launched an eight-week accelerator program to support Thai startups in health, wellness, and education. Ten startups will receive mentorship and resources to develop their products, with a Demo Day in November to showcase their progress. The initiative aims to help Thai founders build trusted AI products and expand globally.
+tags:
+- Thailand
+- AI startups
+- OpenAI
+- Ministry of Higher Education
+- Science
+- Research and Innovation
+- accelerator
+- prototypes
+- real-world use
+- health
+- wellness
+- education
+- public-private partnership
+- National Innovation Agency
+- Mahidol University
+- Techsauce
+- healthcare
+- reliability
+- mentors
+- technology
+- research
+- startup communities
+- technical talent
+- AI builders
+- ChatGPT
+- Codex
+- active users
+- medical AI
+- wellness AI
+- education
+- ageing population
+- digital economy
+- CARIVA
+- Wello Food
+- Dietz
+- Precisionize
+- FitSloth
+- Curico
+- insKru
+- Floaino
+- EasyKids Robotics
+- Globish
+- AIAT
+- Codex Hackathon
+- API credits
+- technical guidance
+- frontier models
+- product design
+- engineering
+- responsible AI
+- privacy
+- security
+- cost management
+- growth
+- fundraising
+- research networks
+- funding
+- growth ecosystem
+- academic expertise
+- evaluation
+- commercial milestone
+- voice agent
+- hospital
+- appointment scheduling
+- emergency
+- learning tools
+- childcare centers
+- teachers
+- grading
+- family learning platform
+- Demo Day
+- investors
+- government agencies
+- universities
+- hospitals
+- schools
+- customers
+- implementation
+- technology partners.
+content_type: ContentType.BLOG_POST
+---
+
