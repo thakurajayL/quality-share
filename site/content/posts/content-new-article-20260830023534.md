@@ -1,0 +1,72 @@
+---
+title: The full stack behind abundant intelligence
+published_date: 2026-08-25T07:05:00+00:00
+link: https://openai.com/index/the-full-stack-behind-abundant-intelligence
+summary: OpenAI's progress in AI is driven by an integrated system that includes hardware, software, models, and data centers. Their custom inference chip, Jalapeño, offers superior performance in benchmarks and greater control over model running and economics. OpenAI actively manages a portfolio of providers and hardware to optimize capability and economics, seeking the strongest mix of capability, speed, reliability, efficiency, and cost for each workload. The value of their system is measured by producing more useful intelligence from every unit of compute, leading to faster results, more dependable products, and lower costs for successful work. This compounding advantage of better technology leading to better economics drives progress and strengthens the entire system.
+tags:
+- AI
+- OpenAI
+- compute strategy
+- data centers
+- chips
+- models
+- developer platform
+- products
+- AI-native devices
+- software
+- hardware
+- workloads
+- performance results
+- custom inference chip
+- benchmark
+- throughput
+- latency
+- DeepSeek R1
+- Kimi K2
+- control
+- economics
+- silicon
+- Pareto frontier
+- capability
+- reliability
+- efficiency
+- cost
+- portfolio
+- Microsoft
+- NVIDIA
+- AWS
+- AMD
+- Broadcom
+- Cerebras
+- CoreWeave
+- Oracle
+- SB Energy
+- SoftBank
+- cloud infrastructure
+- accelerated computing
+- data-center development
+- energy delivery
+- capability
+- economics
+- deployment models
+- technology
+- leverage
+- ecosystem
+- data centers
+- Project Camellia
+- intelligence
+- models
+- routing
+- context management
+- coding agent index
+- GPT-5.6 Sol
+- Jevons paradox
+- efficiency
+- economic activity
+- growth funds
+- research
+- infrastructure
+- safety.
+content_type: ContentType.BLOG_POST
+---
+
