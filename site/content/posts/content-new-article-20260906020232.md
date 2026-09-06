@@ -1,0 +1,81 @@
+---
+title: How AI-native companies turn workflows into operating capability
+published_date: 2026-09-01T17:00:00+00:00
+link: https://openai.com/index/ai-native-company-workflows
+summary: AI-native companies like Basis, Clay, and Exa Labs are using AI agents to streamline workflows and improve operating capabilities. By integrating AI into various processes such as onboarding, account management, and developer integrations, these companies are able to generate more output tokens per active user compared to typical firms. The key challenge for leaders is to build trust, measure success, and continuously improve workflows. Startups like Basis, Clay, and Exa Labs have successfully implemented AI agents into their workflows, resulting in more efficient processes and improved outcomes. Companies can effectively leverage AI by focusing on specific job tasks, measuring outcomes, defining agent job descriptions, involving human input, encouraging experimentation, and carrying successful operating patterns forward.
+tags:
+- AI-native companies
+- workflows
+- operating capability
+- agents
+- onboarding
+- account management
+- developer integrations
+- enterprise leaders
+- AI usage
+- output tokens
+- operating shift
+- company context
+- tools
+- workflows
+- experimentation
+- startups
+- employee onboarding
+- AI agents
+- workflow improvement
+- familiar work
+- consistency
+- repeatable processes
+- trust
+- measure
+- improve
+- self-learning revenue engine
+- sales challenge
+- deal context
+- CRM records
+- persistent workspace
+- account subagents
+- priority moves
+- enterprise sales cycle
+- shared evidence
+- web search infrastructure
+- search API
+- developer relations
+- integration opportunities
+- workflow design
+- human review
+- decision rights
+- operational terms
+- patterns
+- improvement
+- end-to-end workflow
+- strategic priority
+- systems
+- controls
+- measurable stakes
+- accountable owner
+- KPI
+- baseline
+- guardrails
+- agent's job description
+- required context
+- tools
+- permissions
+- human review
+- human system
+- business outcome
+- domain logic
+- adoption
+- experimentation
+- OpenAI research
+- early-career employees
+- skills
+- Plugins
+- shared workspaces
+- operating pattern
+- context preservation
+- evaluations
+- enablement.
+content_type: ContentType.BLOG_POST
+---
+
