@@ -1,0 +1,82 @@
+---
+title: ZGateway: Learnings from Putting a Proxy in Front of ZippyDB
+published_date: 2026-09-03T16:00:20+00:00
+link: https://engineering.fb.com/2026/09/03/core-infra/zgateway-proxy-zippydb-meta/
+summary: ZGateway is a proxy introduced by Meta to streamline traffic through ZippyDB, their key value store. It manages the client fleet of ZippyDB, reducing inefficiencies and improving reliability by handling connection management and request batching. ZGateway reduces fan-in/fan-out, improves scaling behavior, and optimizes request streams. It serves as a central hub for various capabilities like traffic routing, tenant isolation, read caching, load balancing, and cross-region resilience. The future of ZGateway includes agent-operated heuristics, co-location, and a multi-process gateway for enhanced control, efficiency, and fault isolation.
+tags:
+- proxy
+- ZGateway
+- Meta
+- traffic
+- ZippyDB
+- key value store
+- admission control
+- load balancing
+- cross-region resilience
+- operations
+- client fleet
+- connection management
+- request batching
+- client population
+- shared backend
+- connection pooler
+- service mesh
+- API gateway
+- fleet management
+- scalability
+- reliability
+- efficiency
+- performance
+- direct access
+- client-server architecture
+- connection handling
+- traffic management
+- routing
+- caching
+- shard resolution
+- regional tiers
+- ServiceRouter
+- service mesh solution
+- thick client
+- thin client
+- stateless proxy
+- computational overhead
+- traffic handling
+- request processing
+- asymmetry
+- connection counts
+- traffic reduction
+- fleet management
+- scaling behavior
+- batching
+- coalescing
+- backend RPC
+- QPS
+- CPU
+- load balancing
+- request stream
+- shard mapping
+- replica selection
+- hedging
+- traffic routing
+- tenant isolation
+- admission control
+- discriminant load shedding
+- CPU concurrency control
+- memory handling
+- read caching
+- live invalidation
+- load balancing
+- stateless architecture
+- equal treatment
+- control-plane balancer
+- cross-region resilience
+- failover
+- global routing
+- mega-regions
+- rings
+- transactions
+- richer operations.
+content_type: ContentType.BLOG_POST
+---
+
