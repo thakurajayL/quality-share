@@ -1,0 +1,1223 @@
+---
+title: Rapidly scaling online storage to serve over 1 billion ChatGPT users
+published_date: 2026-09-11T10:00:00+00:00
+link: https://openai.com/index/scaling-storage-one-billion-users-part-one
+summary: The article discusses how OpenAI scaled their online storage platform, Habitat, in Python to serve over 1 billion ChatGPT users. Despite the challenges of using Python at scale, the decision was made to prioritize stability and unblock product developers. Statsig also faced challenges in managing configurations and load balancing, eventually transitioning to Istio and Envoy for better performance. The transition from Python to Rust and the use of Rockset for complex querying needs are also highlighted. Future plans include sharing more insights and discussing scalability.
+tags:
+- online storage
+- scaling
+- Python
+- application
+- Habitat
+- OpenAI
+- data access
+- infrastructure
+- system engineers
+- GPTs
+- DevDay
+- distributed system
+- petabytes
+- user growth
+- product demand
+- tactical decisions
+- storage platform
+- service
+- multi-tenancy
+- read performance
+- partnership
+- Azure Cosmos DB
+- technical debt
+- performance trade-offs
+- technical path
+- Python service
+- network latency
+- CPU parallelism
+- asyncio
+- tail latencies
+- CPU profiling
+- JSON parsing
+- Statsig
+- load balancing
+- connection pooling
+- metastable failure
+- Istio
+- Envoy
+- thundering herd
+- NoSQL API
+- scalability
+- Azure Cosmos DB
+- Postgres
+- query optimization
+- outages
+- indexing
+- data management
+- latency cliffs
+- service stability
+- technical challenges
+- platform enhancements
+- data security
+- privacy
+- access control
+- audit logging
+- central control
+- performance optimization
+- technical debt
+- product development
+- infrastructure management
+- service reliability
+- scalability issues
+- network resources
+- connection management
+- load balancing strategies
+- API design
+- data storage
+- data retrieval
+- system optimization
+- service architecture
+- technical improvements
+- service deployment
+- service monitoring
+- service scalability
+- service efficiency
+- service performance
+- service reliability
+- service maintenance
+- service management
+- service coordination
+- service architecture
+- service optimization
+- service stability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+- service enhancements
+- service scaling
+- service challenges
+- service coordination
+- service infrastructure
+- service operations
+- service efficiency
+- service tuning
+- service load balancing
+- service connection pooling
+- service latency
+- service CPU utilization
+- service network utilization
+- service memory utilization
+- service disk utilization
+- service optimization
+- service performance tuning
+- service scalability
+- service reliability
+- service security
+- service privacy
+- service access control
+- service audit logging
+- service deployment
+- service observability
+content_type: ContentType.ROOT_CAUSE_ANALYSIS
+---
+
