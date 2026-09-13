@@ -1,0 +1,77 @@
+---
+title: OpenAI expands initiatives to support journalism from classrooms to newsrooms
+published_date: 2026-09-08T00:00:00+00:00
+link: https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms
+summary: OpenAI is launching an initiative to support journalism by providing tools, training, and partnerships to students, educators, journalists, and news organizations. The program will start at CUNY's Newmark J-School and Northwestern University's Medill School, focusing on preparing journalism students for the changing industry with AI technology. This initiative builds on OpenAI's current partnerships with journalism organizations and aims to expand support and collaboration in the journalism education ecosystem.
+tags:
+- journalism
+- OpenAI
+- AI
+- technology
+- students
+- educators
+- news organizations
+- Tow-Knight Center
+- Newmark J-School
+- Northwestern University
+- Medill School
+- ChatGPT Edu1
+- journalism schools
+- reporters
+- editors
+- business teams
+- AI tools
+- journalism industry
+- ethics
+- responsibility
+- media industry
+- Knight Lab
+- journalism ecosystem
+- journalism education
+- newsroom leaders
+- collaboration
+- partnerships
+- training
+- support
+- future of news
+- storytelling
+- data analysis
+- AI technology
+- journalism profession
+- journalism students
+- journalism work
+- journalism conferences
+- journalism initiatives
+- journalism support
+- journalism future
+- journalism ethics
+- journalism education ecosystem
+- journalism collaborations
+- journalism industry partnerships
+- journalism technology
+- journalism tools
+- journalism training
+- journalism community
+- journalism AI
+- journalism projects
+- journalism innovation
+- journalism funding
+- journalism grants
+- journalism conferences
+- journalism workshops
+- journalism programs
+- journalism skills
+- journalism fluency
+- journalism confidence
+- journalism deployment
+- journalism experiences
+- journalism newsrooms
+- journalism storytelling
+- journalism AI tools
+- journalism practical training
+- journalism real-world examples
+- journalism publishers
+- journalism AI Academy.
+content_type: ContentType.BLOG_POST
+---
+
