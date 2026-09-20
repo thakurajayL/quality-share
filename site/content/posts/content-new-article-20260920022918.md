@@ -1,0 +1,82 @@
+---
+title: Introducing Astra for Law
+published_date: 2026-09-17T00:00:00+00:00
+link: https://openai.com/index/astra-for-law
+summary: OpenAI has developed Astra for Law, an AI model tailored for legal work that includes a legal search index for research and analysis. The model has shown improvements in finding relevant sources and passages. OpenAI is customizing Astra for Law for selected law firms and plans to offer it through the API. They are committed to advancing the model and collaborating with legal technology partners to enhance AI capabilities in the legal field.
+tags:
+- law
+- Astra for Law
+- legal technology
+- AI products
+- workflows
+- GPT-6 Astra
+- legal work
+- legal search index
+- legal analysis
+- legal writing
+- legal research
+- case law
+- statutes
+- regulations
+- legal strategy
+- Trusted Access Program
+- AI governance
+- information permissions
+- ethical walls
+- ChatGPT Enterprise
+- law firms
+- legal judgment
+- legal AI
+- ChatGPT
+- API
+- frontier intelligence
+- legal practice
+- legal technology companies
+- legal expertise
+- legal tools
+- legal workflow
+- legal precedent
+- legal research questions
+- legal validation
+- legal benchmark
+- legal reasoning
+- legal foundation
+- legal advice
+- legal instructions
+- legal controls
+- legal confidentiality
+- legal oversight
+- legal ethics
+- legal standards
+- legal compliance
+- legal data
+- legal agreements
+- legal diligence
+- legal risk
+- legal review
+- legal implications
+- legal expertise
+- legal drafting
+- legal analysis
+- legal judgment
+- legal partnership
+- legal plugins
+- legal community
+- legal skills
+- legal applications
+- legal workflows
+- legal ecosystem
+- legal development
+- legal feedback
+- legal evaluation
+- legal guidance
+- legal partnership
+- legal expertise
+- legal standards
+- legal judgment
+- legal AI
+- legal clients
+- legal practice.
+content_type: ContentType.BLOG_POST
+---
+
