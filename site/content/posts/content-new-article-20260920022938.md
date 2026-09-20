@@ -1,0 +1,157 @@
+---
+title: Reimagining advertising with AI
+published_date: 2026-09-16T13:00:00+00:00
+link: https://openai.com/index/reimagining-advertising-with-ai
+summary: OpenAI is launching new AI-powered features to enhance ads for users and simplify advertising for businesses. This includes personalized conversations with Sponsored Agents, AI creative tools in Ads Manager, and integrations with HubSpot and Shopify. The aim is to help users find what they need and help businesses manage campaigns more effectively, while prioritizing trust and providing valuable ad experiences.
+tags:
+- AI
+- advertising
+- ChatGPT
+- Sponsored Agents
+- Ads Manager
+- CRM
+- ecommerce
+- HubSpot
+- Shopify
+- ad campaigns
+- AI tools
+- ad experiences
+- AI assistance
+- text customization
+- ChatGPT Ads
+- ChatGPT Ads app
+- ChatGPT Ads platform
+- AI-native environment
+- business growth
+- ad management
+- ad creation
+- ad performance
+- user engagement
+- AI-powered experiences
+- ad integration
+- ad optimization
+- ad targeting
+- ad personalization
+- ad platform
+- ad tools
+- ad technology
+- ad strategy
+- ad innovation
+- ad efficiency
+- ad effectiveness
+- ad conversion
+- ad insights
+- ad recommendations
+- ad automation
+- ad channels
+- ad marketplace
+- ad marketplace
+- ad solutions
+- ad industry
+- ad trends
+- ad updates
+- ad principles
+- ad trust
+- ad relevance
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+- ad discovery
+content_type: ContentType.BLOG_POST
+---
+
