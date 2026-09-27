@@ -1,0 +1,97 @@
+---
+title: Ringg’s AI agents resolve up to 65% of customer calls with OpenAI
+published_date: 2026-09-23T12:00:00+00:00
+link: https://openai.com/index/ringg
+summary: Ringg's AI agents, powered by GPT-5.6, handle customer calls across various platforms at a significantly lower cost compared to previous versions. They achieve a high customer satisfaction score and use advanced models to interpret requests, guide customers, and access information. Ringg prioritizes improving economics, expanding agent capabilities, and achieving business outcomes through automation.
+tags:
+- AI
+- agents
+- customer calls
+- OpenAI
+- GPT-5.6
+- Ringg
+- multilingual
+- voice
+- chat
+- WhatsApp
+- web
+- cost
+- connected calls
+- resolution
+- customer service
+- India
+- enterprise
+- quality
+- latency
+- model costs
+- CSAT
+- policy
+- account record
+- appointment
+- CRM
+- specialist
+- real-time interactions
+- Luna
+- workflows
+- orchestration
+- CRMs
+- ticketing platforms
+- payment systems
+- scheduling tools
+- APIs
+- knowledge system
+- structured filtering
+- semantic retrieval
+- enterprise information
+- subagents
+- qualification
+- support
+- verification
+- scheduling
+- escalation
+- conversation
+- conversational quality
+- instruction following
+- tool calling
+- reliability
+- production workloads
+- GPT-4.1
+- GPT-5.6 Terra
+- GPT-5.6 Sol
+- post-call analysis
+- summaries
+- sentiment classification
+- evaluation
+- continuous improvement
+- historical conversations
+- simulated flows
+- language variations
+- regional languages
+- offline testing
+- router
+- latency
+- endpoint health
+- unit economics
+- migrations
+- Slack support
+- engineering team
+- routine inquiries
+- Policybazaar
+- Practo
+- Groww
+- IPOs
+- futures
+- options
+- self-service
+- handling time
+- computer-use capabilities
+- browser agents
+- platform onboarding
+- KYC processes
+- IT troubleshooting
+- claims processing
+- context layer
+- automation.
+content_type: ContentType.BLOG_POST
+---
+
